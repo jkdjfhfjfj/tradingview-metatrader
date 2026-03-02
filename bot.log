@@ -1,0 +1,626 @@
+[2026-02-27 00:17:19] [OK] Webhook server listening on port 80
+[2026-02-27 00:17:19] [INFO] TradingView webhook URL: http://54.204.233.214:80/webhook
+[2026-02-27 00:17:19] [INFO] Health check: http://54.204.233.214:80/
+[2026-02-27 00:17:19] [INFO] Log file: /home/ubuntu/trading-bot/bot.log
+[2026-02-27 00:18:56] [WARN] Unknown command: testbuy. Type help for commands.
+[2026-02-27 00:19:17] [WARN] Unknown command: testbuy. Type help for commands.
+[2026-02-27 00:19:32] [INFO] Sending test BUY signal for GOLD...
+[2026-02-27 00:19:32] [INFO] Signal received: BUY GOLD | Lot: 0.01 | SL: 4300 | TP: 6000
+[2026-02-27 00:19:32] [WARN] MetaTrader response: {"id":3673496,"error":"UnauthorizedError","message":"Failed to authorize user due to invalid auth-token header"}
+[2026-02-27 00:19:32] [BUY] BUY OPENED GOLD | Entry: market | SL: 4300 | TP: 6000 | Lot: 0.01
+[2026-02-27 00:24:00] [INFO] Shutting down bot...
+[2026-02-27 00:26:29] [OK] Webhook server listening on port 80
+[2026-02-27 00:26:29] [INFO] TradingView webhook URL: http://54.204.233.214:80/webhook
+[2026-02-27 00:26:29] [INFO] Health check: http://54.204.233.214:80/
+[2026-02-27 00:26:29] [INFO] Log file: /home/ubuntu/trading-bot/bot.log
+[2026-02-27 00:27:21] [INFO] Sending test BUY signal for GOLD...
+[2026-02-27 00:27:21] [INFO] Signal received: BUY GOLD | Lot: 0.01 | SL: — | TP: —
+[2026-02-27 00:27:22] [ERR] MetaTrader rejected order!
+[2026-02-27 00:27:22] [ERR]   Type   : UnauthorizedError
+[2026-02-27 00:27:22] [ERR]   Reason : Failed to authorize user due to invalid auth-token header
+[2026-02-27 00:27:22] [ERR]   Fix    : Your META_API_TOKEN is invalid or expired.
+[2026-02-27 00:27:22] [ERR]            Go to https://app.metaapi.cloud → copy a fresh token → update .env
+[2026-02-27 00:27:22] [WARN] Trade ABORTED — order was NOT placed on MetaTrader. Nothing saved.
+[2026-02-27 00:30:40] [INFO] Signal received: UPDATE  | Lot: 0.01 | SL: 4565 | TP: 35634
+[2026-02-27 00:30:40] [WARN] No open trade to update.
+[2026-02-27 00:31:59] [INFO] Raw payload: {"action":"sell","symbol":"GOLD","sl":3100,"tp":2900,"lot":0.01,"time":"2026-02-27T00:00:00Z"}
+[2026-02-27 00:31:59] [INFO] Signal received: SELL GOLD | Lot: 0.01 | SL: 3100 | TP: 2900
+[2026-02-27 00:32:00] [ERR] MetaTrader rejected order!
+[2026-02-27 00:32:00] [ERR]   Type   : UnauthorizedError
+[2026-02-27 00:32:00] [ERR]   Reason : Failed to authorize user due to invalid auth-token header
+[2026-02-27 00:32:00] [ERR]   Fix    : Your META_API_TOKEN is invalid or expired.
+[2026-02-27 00:32:00] [ERR]            Go to https://app.metaapi.cloud → copy a fresh token → update .env
+[2026-02-27 00:32:00] [WARN] Trade ABORTED — order was NOT placed on MetaTrader. Nothing saved.
+[2026-02-27 00:35:00] [INFO] CLI closed.
+[2026-02-27 00:37:23] [OK] Webhook server listening on port 80
+[2026-02-27 00:37:23] [INFO] TradingView webhook URL: http://54.204.233.214:80/webhook
+[2026-02-27 00:37:23] [INFO] Health check: http://54.204.233.214:80/
+[2026-02-27 00:37:23] [INFO] Log file: /home/ubuntu/trading-bot/bot.log
+[2026-02-27 00:37:38] [INFO] Raw payload: {"action":"sell","symbol":"GOLD","sl":3100,"tp":2900,"lot":0.01,"time":"2026-02-27T00:00:00Z"}
+[2026-02-27 00:37:38] [INFO] Signal received: SELL GOLD | Lot: 0.01 | SL: 3100 | TP: 2900
+[2026-02-27 00:37:38] [ERR] MetaTrader rejected order!
+[2026-02-27 00:37:38] [ERR]   Type   : MetaAPIError
+[2026-02-27 00:37:38] [ERR]   Reason : Invalid stops in the request
+[2026-02-27 00:37:38] [WARN] Trade ABORTED — order was NOT placed on MetaTrader. Nothing saved.
+[2026-02-27 00:38:14] [INFO] Raw payload: {"action":"sell","symbol":"GOLD","sl":3100,"tp":5900,"lot":0.01,"me":"2026-02-27T00:00:00Z"}
+[2026-02-27 00:38:14] [INFO] Signal received: SELL GOLD | Lot: 0.01 | SL: 3100 | TP: 5900
+[2026-02-27 00:38:14] [ERR] MetaTrader rejected order!
+[2026-02-27 00:38:14] [ERR]   Type   : MetaAPIError
+[2026-02-27 00:38:14] [ERR]   Reason : Invalid stops in the request
+[2026-02-27 00:38:14] [WARN] Trade ABORTED — order was NOT placed on MetaTrader. Nothing saved.
+[2026-02-27 00:39:16] [INFO] Sending test BUY signal for GOLD...
+[2026-02-27 00:39:16] [INFO] Signal received: BUY GOLD | Lot: 0.01 | SL: — | TP: —
+[2026-02-27 00:39:17] [ERR] MetaTrader rejected order!
+[2026-02-27 00:39:17] [ERR]   Type   : MetaAPIError
+[2026-02-27 00:39:17] [ERR]   Reason : There is not enough money to complete the request
+[2026-02-27 00:39:17] [WARN] Trade ABORTED — order was NOT placed on MetaTrader. Nothing saved.
+[2026-02-27 00:40:39] [INFO] Raw payload: {}
+[2026-02-27 00:40:39] [INFO] Signal received: undefined undefined | Lot: 0.01 | SL: — | TP: —
+[2026-02-27 00:40:39] [ERR] Unknown action: undefined
+[2026-02-27 00:40:59] [INFO] Raw payload: {}
+[2026-02-27 00:40:59] [INFO] Signal received: undefined undefined | Lot: 0.01 | SL: — | TP: —
+[2026-02-27 00:40:59] [ERR] Unknown action: undefined
+[2026-02-27 00:41:16] [INFO] Raw payload: {}
+[2026-02-27 00:41:16] [INFO] Signal received: undefined undefined | Lot: 0.01 | SL: — | TP: —
+[2026-02-27 00:41:16] [ERR] Unknown action: undefined
+[2026-02-27 00:41:25] [INFO] Raw payload: {"action":"sell","symbol":"GOLD","sl":3100,"tp":5900,"lot":0.01,"me":"2026-02-27T00:00:00Z"}
+[2026-02-27 00:41:25] [INFO] Signal received: SELL GOLD | Lot: 0.01 | SL: 3100 | TP: 5900
+[2026-02-27 00:41:26] [ERR] MetaTrader rejected order!
+[2026-02-27 00:41:26] [ERR]   Type   : MetaAPIError
+[2026-02-27 00:41:26] [ERR]   Reason : Invalid stops in the request
+[2026-02-27 00:41:26] [WARN] Trade ABORTED — order was NOT placed on MetaTrader. Nothing saved.
+[2026-02-27 00:42:03] [INFO] Sending test SELL signal for ETHUSD...
+[2026-02-27 00:42:03] [INFO] Signal received: SELL ETHUSD | Lot: 0.01 | SL: — | TP: —
+[2026-02-27 00:42:03] [ERR] MetaTrader rejected order!
+[2026-02-27 00:42:03] [ERR]   Type   : MetaAPIError
+[2026-02-27 00:42:03] [ERR]   Reason : Invalid volume in the request
+[2026-02-27 00:42:03] [WARN] Trade ABORTED — order was NOT placed on MetaTrader. Nothing saved.
+[2026-02-27 00:42:37] [INFO] CLI closed.
+[2026-02-27 00:43:09] [OK] Webhook server listening on port 80
+[2026-02-27 00:43:09] [INFO] TradingView webhook URL: http://54.204.233.214:80/webhook
+[2026-02-27 00:43:09] [INFO] Health check: http://54.204.233.214:80/
+[2026-02-27 00:43:09] [INFO] Log file: /home/ubuntu/trading-bot/bot.log
+[2026-02-27 00:43:31] [INFO] Sending test BUY signal for ETHUSD...
+[2026-02-27 00:43:31] [INFO] Signal received: BUY ETHUSD | Lot: 0.02 | SL: — | TP: —
+[2026-02-27 00:43:31] [ERR] MetaTrader rejected order!
+[2026-02-27 00:43:31] [ERR]   Type   : MetaAPIError
+[2026-02-27 00:43:31] [ERR]   Reason : There is not enough money to complete the request
+[2026-02-27 00:43:31] [WARN] Trade ABORTED — order was NOT placed on MetaTrader. Nothing saved.
+[2026-02-27 07:06:05] [OK] Webhook server listening on port 80
+[2026-02-27 07:06:05] [INFO] TradingView webhook URL: http://54.204.233.214:80/webhook
+[2026-02-27 07:06:05] [INFO] Health check: http://54.204.233.214:80/
+[2026-02-27 07:06:05] [INFO] Log file: /home/ubuntu/trading-bot/bot.log
+[2026-02-27 07:07:00] [WARN] No open trade to close.
+[2026-02-27 07:07:50] [WARN] No open trade to sync.
+[2026-02-27 07:12:16] [INFO] Shutting down bot...
+[2026-02-27 07:16:54] [OK] Webhook server listening on port 80
+[2026-02-27 07:16:54] [INFO] TradingView webhook URL: http://54.204.233.214:80/webhook
+[2026-02-27 07:16:54] [INFO] Health check: http://54.204.233.214:80/
+[2026-02-27 07:16:54] [INFO] Log file: /home/ubuntu/trading-bot/bot.log
+[2026-02-27 07:20:23] [OK] Webhook server listening on port 80
+[2026-02-27 07:20:23] [INFO] TradingView webhook URL: http://54.204.233.214:80/webhook
+[2026-02-27 07:20:23] [INFO] Health check: http://54.204.233.214:80/
+[2026-02-27 07:20:23] [INFO] Log file: /home/ubuntu/trading-bot/bot.log
+[2026-02-27 07:25:16] [INFO] Raw payload: {"action":"sell","symbol":"GOLD","sl":3100,"tp":5900,"lot":0.01,"me":"2026-02-27T00:00:00Z"}
+[2026-02-27 07:25:16] [INFO] Signal received: SELL GOLD | Lot: 0.01 | SL: 3100 | TP: 5900
+[2026-02-27 07:25:21] [ERR] MetaTrader rejected order!
+[2026-02-27 07:25:21] [ERR]   Type   : TimeoutError
+[2026-02-27 07:25:21] [ERR]   Reason : It seems like the account cd2c02a3-7c58-4c80-bebc-343f71863e58 is not connected to broker yet or request URL you use does not match the account region. Please make sure account is connected to broker before retrying the request. You can find valid URL at https://app.metaapi.cloud/api-access/api-urls
+[2026-02-27 07:25:21] [WARN] Trade ABORTED — order was NOT placed on MetaTrader. Nothing saved.
+[2026-02-27 07:26:15] [INFO] Raw payload: {"action":"sell","symbol":"GOLD","sl":3100,"tp":5900,"lot":0.01,"me":"2026-02-27T00:00:00Z"}
+[2026-02-27 07:26:15] [INFO] Signal received: SELL GOLD | Lot: 0.01 | SL: 3100 | TP: 5900
+[2026-02-27 07:26:20] [ERR] MetaTrader rejected order!
+[2026-02-27 07:26:20] [ERR]   Type   : TimeoutError
+[2026-02-27 07:26:20] [ERR]   Reason : It seems like the account cd2c02a3-7c58-4c80-bebc-343f71863e58 is not connected to broker yet or request URL you use does not match the account region. Please make sure account is connected to broker before retrying the request. You can find valid URL at https://app.metaapi.cloud/api-access/api-urls
+[2026-02-27 07:26:20] [WARN] Trade ABORTED — order was NOT placed on MetaTrader. Nothing saved.
+[2026-02-27 07:27:11] [INFO] Raw payload: {"action":"sell","symbol":"GOLD","sl":3100,"tp":5900,"lot":0.01,"me":"2026-02-27T00:00:00Z"}
+[2026-02-27 07:27:11] [INFO] Signal received: SELL GOLD | Lot: 0.01 | SL: 3100 | TP: 5900
+[2026-02-27 07:27:16] [ERR] MetaTrader rejected order!
+[2026-02-27 07:27:16] [ERR]   Type   : TimeoutError
+[2026-02-27 07:27:16] [ERR]   Reason : It seems like the account cd2c02a3-7c58-4c80-bebc-343f71863e58 is not connected to broker yet or request URL you use does not match the account region. Please make sure account is connected to broker before retrying the request. You can find valid URL at https://app.metaapi.cloud/api-access/api-urls
+[2026-02-27 07:27:16] [WARN] Trade ABORTED — order was NOT placed on MetaTrader. Nothing saved.
+[2026-02-27 07:34:55] [INFO] Raw payload: {"action":"sell","symbol":"GOLD","sl":3100,"tp":5900,"lot":0.01,"me":"2026-02-27T00:00:00Z"}
+[2026-02-27 07:34:55] [INFO] Signal received: SELL GOLD | Lot: 0.01 | SL: 3100 | TP: 5900
+[2026-02-27 07:35:01] [ERR] MetaTrader rejected order!
+[2026-02-27 07:35:01] [ERR]   Type   : TimeoutError
+[2026-02-27 07:35:01] [ERR]   Reason : It seems like the account cd2c02a3-7c58-4c80-bebc-343f71863e58 is not connected to broker yet or request URL you use does not match the account region. Please make sure account is connected to broker before retrying the request. You can find valid URL at https://app.metaapi.cloud/api-access/api-urls
+[2026-02-27 07:35:01] [WARN] Trade ABORTED — order was NOT placed on MetaTrader. Nothing saved.
+[2026-02-27 07:46:22] [INFO] Raw payload: {"action":"sell","symbol":"GOLD","sl":"2045.50","tp":"2010.25","lot":0.01,"time":"2026-02-27T07:45:00Z","secret":"your_webhook_secret"}
+[2026-02-27 07:46:22] [INFO] Signal received: SELL GOLD | Lot: 0.01 | SL: 2045.50 | TP: 2010.25
+[2026-02-27 07:46:27] [ERR] MetaTrader rejected order!
+[2026-02-27 07:46:27] [ERR]   Type   : TimeoutError
+[2026-02-27 07:46:27] [ERR]   Reason : It seems like the account cd2c02a3-7c58-4c80-bebc-343f71863e58 is not connected to broker yet or request URL you use does not match the account region. Please make sure account is connected to broker before retrying the request. You can find valid URL at https://app.metaapi.cloud/api-access/api-urls
+[2026-02-27 07:46:27] [WARN] Trade ABORTED — order was NOT placed on MetaTrader. Nothing saved.
+[2026-02-27 08:12:45] [INFO] Raw payload: {"action":"sell","symbol":"GOLD","sl":"2045.50","tp":"2010.25","lot":0.01,"time":"2026-02-27T07:45:00Z","secret":"your_webhook_secret"}
+[2026-02-27 08:12:45] [INFO] Signal received: SELL GOLD | Lot: 0.01 | SL: 2045.50 | TP: 2010.25
+[2026-02-27 08:12:50] [ERR] MetaTrader rejected order!
+[2026-02-27 08:12:50] [ERR]   Type   : TimeoutError
+[2026-02-27 08:12:50] [ERR]   Reason : It seems like the account cd2c02a3-7c58-4c80-bebc-343f71863e58 is not connected to broker yet or request URL you use does not match the account region. Please make sure account is connected to broker before retrying the request. You can find valid URL at https://app.metaapi.cloud/api-access/api-urls
+[2026-02-27 08:12:50] [WARN] Trade ABORTED — order was NOT placed on MetaTrader. Nothing saved.
+[2026-02-27 08:24:25] [INFO] Raw payload: {"action":"buy","symbol":"GOLD","sl":"1","tp":"0","lot":0.01,"time":"2026-02-27T05:24:00Z","secret":"your_webhook_secret"}
+[2026-02-27 08:24:25] [INFO] Signal received: BUY GOLD | Lot: 0.01 | SL: 1 | TP: 0
+[2026-02-27 08:24:30] [ERR] MetaTrader rejected order!
+[2026-02-27 08:24:30] [ERR]   Type   : TimeoutError
+[2026-02-27 08:24:30] [ERR]   Reason : It seems like the account cd2c02a3-7c58-4c80-bebc-343f71863e58 is not connected to broker yet or request URL you use does not match the account region. Please make sure account is connected to broker before retrying the request. You can find valid URL at https://app.metaapi.cloud/api-access/api-urls
+[2026-02-27 08:24:30] [WARN] Trade ABORTED — order was NOT placed on MetaTrader. Nothing saved.
+[2026-02-27 09:38:06] [INFO] Raw payload: {"action":"sell","symbol":"GOLD","sl":"0","tp":"0","lot":0.01,"time":"2026-02-27T06:36:00Z","secret":"your_webhook_secret"}
+[2026-02-27 09:38:06] [INFO] Signal received: SELL GOLD | Lot: 0.01 | SL: 0 | TP: 0
+[2026-02-27 09:38:11] [ERR] MetaTrader rejected order!
+[2026-02-27 09:38:11] [ERR]   Type   : TimeoutError
+[2026-02-27 09:38:11] [ERR]   Reason : It seems like the account cd2c02a3-7c58-4c80-bebc-343f71863e58 is not connected to broker yet or request URL you use does not match the account region. Please make sure account is connected to broker before retrying the request. You can find valid URL at https://app.metaapi.cloud/api-access/api-urls
+[2026-02-27 09:38:11] [WARN] Trade ABORTED — order was NOT placed on MetaTrader. Nothing saved.
+[2026-02-27 13:28:09] [INFO] Raw payload: {"action":"buy","symbol":"GOLD","sl":"1","tp":"0","lot":0.01,"price":5180.308,"time":"2026-02-27T10:27:00Z","secret":"your_webhook_secret"}
+[2026-02-27 13:28:09] [INFO] Signal received: BUY GOLD | Lot: 0.01 | SL: 1 | TP: 0
+[2026-02-27 13:28:14] [ERR] MetaTrader rejected order!
+[2026-02-27 13:28:14] [ERR]   Type   : TimeoutError
+[2026-02-27 13:28:14] [ERR]   Reason : It seems like the account cd2c02a3-7c58-4c80-bebc-343f71863e58 is not connected to broker yet or request URL you use does not match the account region. Please make sure account is connected to broker before retrying the request. You can find valid URL at https://app.metaapi.cloud/api-access/api-urls
+[2026-02-27 13:28:14] [WARN] Trade ABORTED — order was NOT placed on MetaTrader. Nothing saved.
+[2026-02-27 14:29:41] [INFO] Raw payload: {"action":"buy","symbol":"GOLD","sl":"1","tp":"0","lot":0.01,"price":5178.42,"time":"2026-02-27T11:27:00Z","secret":"your_webhook_secret"}
+[2026-02-27 14:29:41] [INFO] Signal received: BUY GOLD | Lot: 0.01 | SL: 1 | TP: 0
+[2026-02-27 14:29:47] [ERR] MetaTrader rejected order!
+[2026-02-27 14:29:47] [ERR]   Type   : TimeoutError
+[2026-02-27 14:29:47] [ERR]   Reason : It seems like the account cd2c02a3-7c58-4c80-bebc-343f71863e58 is not connected to broker yet or request URL you use does not match the account region. Please make sure account is connected to broker before retrying the request. You can find valid URL at https://app.metaapi.cloud/api-access/api-urls
+[2026-02-27 14:29:47] [WARN] Trade ABORTED — order was NOT placed on MetaTrader. Nothing saved.
+[2026-02-27 14:30:05] [INFO] Raw payload: {"action":"buy","symbol":"GOLD","sl":"1","tp":"0","lot":0.01,"price":5178.17,"time":"2026-02-27T11:30:00Z","secret":"your_webhook_secret"}
+[2026-02-27 14:30:05] [INFO] Signal received: BUY GOLD | Lot: 0.01 | SL: 1 | TP: 0
+[2026-02-27 14:30:11] [ERR] MetaTrader rejected order!
+[2026-02-27 14:30:11] [ERR]   Type   : TimeoutError
+[2026-02-27 14:30:11] [ERR]   Reason : It seems like the account cd2c02a3-7c58-4c80-bebc-343f71863e58 is not connected to broker yet or request URL you use does not match the account region. Please make sure account is connected to broker before retrying the request. You can find valid URL at https://app.metaapi.cloud/api-access/api-urls
+[2026-02-27 14:30:11] [WARN] Trade ABORTED — order was NOT placed on MetaTrader. Nothing saved.
+[2026-02-27 16:35:49] [INFO] Raw payload: {"action":"sell","symbol":"GOLD","sl":"0","tp":"0","lot":0.01,"price":5216.61,"time":"2026-02-27T13:33:00Z","secret":"your_webhook_secret"}
+[2026-02-27 16:35:49] [INFO] Signal received: SELL GOLD | Lot: 0.01 | SL: 0 | TP: 0
+[2026-02-27 16:35:54] [ERR] MetaTrader rejected order!
+[2026-02-27 16:35:54] [ERR]   Type   : TimeoutError
+[2026-02-27 16:35:54] [ERR]   Reason : It seems like the account cd2c02a3-7c58-4c80-bebc-343f71863e58 is not connected to broker yet or request URL you use does not match the account region. Please make sure account is connected to broker before retrying the request. You can find valid URL at https://app.metaapi.cloud/api-access/api-urls
+[2026-02-27 16:35:54] [WARN] Trade ABORTED — order was NOT placed on MetaTrader. Nothing saved.
+[2026-02-27 17:01:25] [INFO] Raw payload: {"action":"buy","symbol":"GOLD","sl":"1","tp":"0","lot":0.01,"price":5226.943,"time":"2026-02-27T14:00:00Z","secret":"your_webhook_secret"}
+[2026-02-27 17:01:25] [INFO] Signal received: BUY GOLD | Lot: 0.01 | SL: 1 | TP: 0
+[2026-02-27 17:01:31] [ERR] MetaTrader rejected order!
+[2026-02-27 17:01:31] [ERR]   Type   : TimeoutError
+[2026-02-27 17:01:31] [ERR]   Reason : It seems like the account cd2c02a3-7c58-4c80-bebc-343f71863e58 is not connected to broker yet or request URL you use does not match the account region. Please make sure account is connected to broker before retrying the request. You can find valid URL at https://app.metaapi.cloud/api-access/api-urls
+[2026-02-27 17:01:31] [WARN] Trade ABORTED — order was NOT placed on MetaTrader. Nothing saved.
+[2026-02-27 17:09:39] [INFO] Raw payload: {"action":"sell","symbol":"GOLD","sl":"0","tp":"0","lot":0.01,"price":5217.8,"time":"2026-02-27T14:09:00Z","secret":"your_webhook_secret"}
+[2026-02-27 17:09:39] [INFO] Signal received: SELL GOLD | Lot: 0.01 | SL: 0 | TP: 0
+[2026-02-27 17:09:44] [ERR] MetaTrader rejected order!
+[2026-02-27 17:09:44] [ERR]   Type   : TimeoutError
+[2026-02-27 17:09:44] [ERR]   Reason : It seems like the account cd2c02a3-7c58-4c80-bebc-343f71863e58 is not connected to broker yet or request URL you use does not match the account region. Please make sure account is connected to broker before retrying the request. You can find valid URL at https://app.metaapi.cloud/api-access/api-urls
+[2026-02-27 17:09:44] [WARN] Trade ABORTED — order was NOT placed on MetaTrader. Nothing saved.
+[2026-02-27 17:31:59] [INFO] Raw payload: {"action":"sell","symbol":"GOLD","sl":"0","tp":"0","lot":0.01,"price":5220.01,"time":"2026-02-27T14:30:00Z","secret":"your_webhook_secret"}
+[2026-02-27 17:31:59] [INFO] Signal received: SELL GOLD | Lot: 0.01 | SL: 0 | TP: 0
+[2026-02-27 17:32:04] [ERR] MetaTrader rejected order!
+[2026-02-27 17:32:04] [ERR]   Type   : TimeoutError
+[2026-02-27 17:32:04] [ERR]   Reason : It seems like the account cd2c02a3-7c58-4c80-bebc-343f71863e58 is not connected to broker yet or request URL you use does not match the account region. Please make sure account is connected to broker before retrying the request. You can find valid URL at https://app.metaapi.cloud/api-access/api-urls
+[2026-02-27 17:32:04] [WARN] Trade ABORTED — order was NOT placed on MetaTrader. Nothing saved.
+[2026-02-27 17:39:39] [INFO] Raw payload: {"action":"sell","symbol":"GOLD","sl":"0","tp":"0","lot":0.01,"price":5220.624,"time":"2026-02-27T14:39:00Z","secret":"your_webhook_secret"}
+[2026-02-27 17:39:39] [INFO] Signal received: SELL GOLD | Lot: 0.01 | SL: 0 | TP: 0
+[2026-02-27 17:39:44] [ERR] MetaTrader rejected order!
+[2026-02-27 17:39:44] [ERR]   Type   : TimeoutError
+[2026-02-27 17:39:44] [ERR]   Reason : It seems like the account cd2c02a3-7c58-4c80-bebc-343f71863e58 is not connected to broker yet or request URL you use does not match the account region. Please make sure account is connected to broker before retrying the request. You can find valid URL at https://app.metaapi.cloud/api-access/api-urls
+[2026-02-27 17:39:44] [WARN] Trade ABORTED — order was NOT placed on MetaTrader. Nothing saved.
+[2026-02-27 18:08:43] [INFO] Raw payload: {"action":"buy","symbol":"GOLD","sl":"1","tp":"0","lot":0.01,"price":5235.85,"time":"2026-02-27T15:06:00Z","secret":"your_webhook_secret"}
+[2026-02-27 18:08:43] [INFO] Signal received: BUY GOLD | Lot: 0.01 | SL: 1 | TP: 0
+[2026-02-27 18:08:48] [ERR] MetaTrader rejected order!
+[2026-02-27 18:08:48] [ERR]   Type   : TimeoutError
+[2026-02-27 18:08:48] [ERR]   Reason : It seems like the account cd2c02a3-7c58-4c80-bebc-343f71863e58 is not connected to broker yet or request URL you use does not match the account region. Please make sure account is connected to broker before retrying the request. You can find valid URL at https://app.metaapi.cloud/api-access/api-urls
+[2026-02-27 18:08:48] [WARN] Trade ABORTED — order was NOT placed on MetaTrader. Nothing saved.
+[2026-02-27 18:16:29] [INFO] Raw payload: {"action":"sell","symbol":"GOLD","sl":"0","tp":"0","lot":0.01,"price":5228.655,"time":"2026-02-27T15:15:00Z","secret":"your_webhook_secret"}
+[2026-02-27 18:16:29] [INFO] Signal received: SELL GOLD | Lot: 0.01 | SL: 0 | TP: 0
+[2026-02-27 18:16:34] [ERR] MetaTrader rejected order!
+[2026-02-27 18:16:34] [ERR]   Type   : TimeoutError
+[2026-02-27 18:16:34] [ERR]   Reason : It seems like the account cd2c02a3-7c58-4c80-bebc-343f71863e58 is not connected to broker yet or request URL you use does not match the account region. Please make sure account is connected to broker before retrying the request. You can find valid URL at https://app.metaapi.cloud/api-access/api-urls
+[2026-02-27 18:16:34] [WARN] Trade ABORTED — order was NOT placed on MetaTrader. Nothing saved.
+[2026-02-27 18:31:01] [INFO] Raw payload: {"action":"buy","symbol":"GOLD","sl":"1","tp":"0","lot":0.01,"price":5233.6,"time":"2026-02-27T15:30:00Z","secret":"your_webhook_secret"}
+[2026-02-27 18:31:01] [INFO] Signal received: BUY GOLD | Lot: 0.01 | SL: 1 | TP: 0
+[2026-02-27 18:31:06] [ERR] MetaTrader rejected order!
+[2026-02-27 18:31:06] [ERR]   Type   : TimeoutError
+[2026-02-27 18:31:06] [ERR]   Reason : It seems like the account cd2c02a3-7c58-4c80-bebc-343f71863e58 is not connected to broker yet or request URL you use does not match the account region. Please make sure account is connected to broker before retrying the request. You can find valid URL at https://app.metaapi.cloud/api-access/api-urls
+[2026-02-27 18:31:06] [WARN] Trade ABORTED — order was NOT placed on MetaTrader. Nothing saved.
+[2026-02-27 18:33:43] [INFO] Raw payload: {"action":"buy","symbol":"GOLD","sl":"1","tp":"0","lot":0.01,"price":5233.832,"time":"2026-02-27T15:33:00Z","secret":"your_webhook_secret"}
+[2026-02-27 18:33:43] [INFO] Signal received: BUY GOLD | Lot: 0.01 | SL: 1 | TP: 0
+[2026-02-27 18:33:48] [ERR] MetaTrader rejected order!
+[2026-02-27 18:33:48] [ERR]   Type   : TimeoutError
+[2026-02-27 18:33:48] [ERR]   Reason : It seems like the account cd2c02a3-7c58-4c80-bebc-343f71863e58 is not connected to broker yet or request URL you use does not match the account region. Please make sure account is connected to broker before retrying the request. You can find valid URL at https://app.metaapi.cloud/api-access/api-urls
+[2026-02-27 18:33:48] [WARN] Trade ABORTED — order was NOT placed on MetaTrader. Nothing saved.
+[2026-02-27 18:37:15] [INFO] Raw payload: {"action":"buy","symbol":"GOLD","sl":"1","tp":"0","lot":0.01,"price":5233.599,"time":"2026-02-27T15:36:00Z","secret":"your_webhook_secret"}
+[2026-02-27 18:37:15] [INFO] Signal received: BUY GOLD | Lot: 0.01 | SL: 1 | TP: 0
+[2026-02-27 18:37:20] [ERR] MetaTrader rejected order!
+[2026-02-27 18:37:20] [ERR]   Type   : TimeoutError
+[2026-02-27 18:37:20] [ERR]   Reason : It seems like the account cd2c02a3-7c58-4c80-bebc-343f71863e58 is not connected to broker yet or request URL you use does not match the account region. Please make sure account is connected to broker before retrying the request. You can find valid URL at https://app.metaapi.cloud/api-access/api-urls
+[2026-02-27 18:37:20] [WARN] Trade ABORTED — order was NOT placed on MetaTrader. Nothing saved.
+[2026-02-27 18:43:05] [INFO] Raw payload: {"action":"buy","symbol":"GOLD","sl":"1","tp":"0","lot":0.01,"price":5233.64,"time":"2026-02-27T15:42:00Z","secret":"your_webhook_secret"}
+[2026-02-27 18:43:05] [INFO] Signal received: BUY GOLD | Lot: 0.01 | SL: 1 | TP: 0
+[2026-02-27 18:43:10] [ERR] MetaTrader rejected order!
+[2026-02-27 18:43:10] [ERR]   Type   : TimeoutError
+[2026-02-27 18:43:10] [ERR]   Reason : It seems like the account cd2c02a3-7c58-4c80-bebc-343f71863e58 is not connected to broker yet or request URL you use does not match the account region. Please make sure account is connected to broker before retrying the request. You can find valid URL at https://app.metaapi.cloud/api-access/api-urls
+[2026-02-27 18:43:10] [WARN] Trade ABORTED — order was NOT placed on MetaTrader. Nothing saved.
+[2026-02-27 18:47:28] [INFO] Raw payload: {"action":"buy","symbol":"GOLD","sl":"1","tp":"0","lot":0.01,"price":5234.151,"time":"2026-02-27T15:45:00Z","secret":"your_webhook_secret"}
+[2026-02-27 18:47:28] [INFO] Signal received: BUY GOLD | Lot: 0.01 | SL: 1 | TP: 0
+[2026-02-27 18:47:33] [ERR] MetaTrader rejected order!
+[2026-02-27 18:47:33] [ERR]   Type   : TimeoutError
+[2026-02-27 18:47:33] [ERR]   Reason : It seems like the account cd2c02a3-7c58-4c80-bebc-343f71863e58 is not connected to broker yet or request URL you use does not match the account region. Please make sure account is connected to broker before retrying the request. You can find valid URL at https://app.metaapi.cloud/api-access/api-urls
+[2026-02-27 18:47:33] [WARN] Trade ABORTED — order was NOT placed on MetaTrader. Nothing saved.
+[2026-02-27 19:20:19] [INFO] Raw payload: {"action":"sell","symbol":"GOLD","sl":"0","tp":"0","lot":0.01,"price":5244.47,"time":"2026-02-27T16:18:00Z","secret":"your_webhook_secret"}
+[2026-02-27 19:20:19] [INFO] Signal received: SELL GOLD | Lot: 0.01 | SL: 0 | TP: 0
+[2026-02-27 19:20:24] [ERR] MetaTrader rejected order!
+[2026-02-27 19:20:24] [ERR]   Type   : TimeoutError
+[2026-02-27 19:20:24] [ERR]   Reason : It seems like the account cd2c02a3-7c58-4c80-bebc-343f71863e58 is not connected to broker yet or request URL you use does not match the account region. Please make sure account is connected to broker before retrying the request. You can find valid URL at https://app.metaapi.cloud/api-access/api-urls
+[2026-02-27 19:20:24] [WARN] Trade ABORTED — order was NOT placed on MetaTrader. Nothing saved.
+[2026-02-27 20:44:08] [INFO] Raw payload: {"action":"buy","symbol":"GOLD","sl":"1","tp":"0","lot":0.01,"price":5236.57,"time":"2026-02-27T17:42:00Z","secret":"your_webhook_secret"}
+[2026-02-27 20:44:08] [INFO] Signal received: BUY GOLD | Lot: 0.01 | SL: 1 | TP: 0
+[2026-02-27 20:44:13] [ERR] MetaTrader rejected order!
+[2026-02-27 20:44:13] [ERR]   Type   : TimeoutError
+[2026-02-27 20:44:13] [ERR]   Reason : It seems like the account cd2c02a3-7c58-4c80-bebc-343f71863e58 is not connected to broker yet or request URL you use does not match the account region. Please make sure account is connected to broker before retrying the request. You can find valid URL at https://app.metaapi.cloud/api-access/api-urls
+[2026-02-27 20:44:13] [WARN] Trade ABORTED — order was NOT placed on MetaTrader. Nothing saved.
+[2026-02-27 20:46:01] [INFO] Raw payload: {"action":"buy","symbol":"GOLD","sl":"1","tp":"0","lot":0.01,"price":5235.808,"time":"2026-02-27T17:45:00Z","secret":"your_webhook_secret"}
+[2026-02-27 20:46:01] [INFO] Signal received: BUY GOLD | Lot: 0.01 | SL: 1 | TP: 0
+[2026-02-27 20:46:06] [ERR] MetaTrader rejected order!
+[2026-02-27 20:46:06] [ERR]   Type   : TimeoutError
+[2026-02-27 20:46:06] [ERR]   Reason : It seems like the account cd2c02a3-7c58-4c80-bebc-343f71863e58 is not connected to broker yet or request URL you use does not match the account region. Please make sure account is connected to broker before retrying the request. You can find valid URL at https://app.metaapi.cloud/api-access/api-urls
+[2026-02-27 20:46:06] [WARN] Trade ABORTED — order was NOT placed on MetaTrader. Nothing saved.
+[2026-02-27 20:48:18] [INFO] Raw payload: {"action":"buy","symbol":"GOLD","sl":"1","tp":"0","lot":0.01,"price":5236.528,"time":"2026-02-27T17:48:00Z","secret":"your_webhook_secret"}
+[2026-02-27 20:48:18] [INFO] Signal received: BUY GOLD | Lot: 0.01 | SL: 1 | TP: 0
+[2026-02-27 20:48:23] [ERR] MetaTrader rejected order!
+[2026-02-27 20:48:23] [ERR]   Type   : TimeoutError
+[2026-02-27 20:48:23] [ERR]   Reason : It seems like the account cd2c02a3-7c58-4c80-bebc-343f71863e58 is not connected to broker yet or request URL you use does not match the account region. Please make sure account is connected to broker before retrying the request. You can find valid URL at https://app.metaapi.cloud/api-access/api-urls
+[2026-02-27 20:48:23] [WARN] Trade ABORTED — order was NOT placed on MetaTrader. Nothing saved.
+[2026-02-27 21:01:38] [INFO] Raw payload: {"action":"buy","symbol":"GOLD","sl":"1","tp":"0","lot":0.01,"price":5236.118,"time":"2026-02-27T18:00:00Z","secret":"your_webhook_secret"}
+[2026-02-27 21:01:38] [INFO] Signal received: BUY GOLD | Lot: 0.01 | SL: 1 | TP: 0
+[2026-02-27 21:01:43] [ERR] MetaTrader rejected order!
+[2026-02-27 21:01:43] [ERR]   Type   : TimeoutError
+[2026-02-27 21:01:43] [ERR]   Reason : It seems like the account cd2c02a3-7c58-4c80-bebc-343f71863e58 is not connected to broker yet or request URL you use does not match the account region. Please make sure account is connected to broker before retrying the request. You can find valid URL at https://app.metaapi.cloud/api-access/api-urls
+[2026-02-27 21:01:43] [WARN] Trade ABORTED — order was NOT placed on MetaTrader. Nothing saved.
+[2026-02-27 21:21:49] [INFO] Raw payload: {"action":"sell","symbol":"GOLD","sl":"0","tp":"0","lot":0.01,"price":5228.02,"time":"2026-02-27T18:21:00Z","secret":"your_webhook_secret"}
+[2026-02-27 21:21:49] [INFO] Signal received: SELL GOLD | Lot: 0.01 | SL: 0 | TP: 0
+[2026-02-27 21:21:54] [ERR] MetaTrader rejected order!
+[2026-02-27 21:21:54] [ERR]   Type   : TimeoutError
+[2026-02-27 21:21:54] [ERR]   Reason : It seems like the account cd2c02a3-7c58-4c80-bebc-343f71863e58 is not connected to broker yet or request URL you use does not match the account region. Please make sure account is connected to broker before retrying the request. You can find valid URL at https://app.metaapi.cloud/api-access/api-urls
+[2026-02-27 21:21:54] [WARN] Trade ABORTED — order was NOT placed on MetaTrader. Nothing saved.
+[2026-02-27 21:24:19] [INFO] Raw payload: {"action":"sell","symbol":"GOLD","sl":"0","tp":"0","lot":0.01,"price":5228.488,"time":"2026-02-27T18:24:00Z","secret":"your_webhook_secret"}
+[2026-02-27 21:24:19] [INFO] Signal received: SELL GOLD | Lot: 0.01 | SL: 0 | TP: 0
+[2026-02-27 21:24:24] [ERR] MetaTrader rejected order!
+[2026-02-27 21:24:24] [ERR]   Type   : TimeoutError
+[2026-02-27 21:24:24] [ERR]   Reason : It seems like the account cd2c02a3-7c58-4c80-bebc-343f71863e58 is not connected to broker yet or request URL you use does not match the account region. Please make sure account is connected to broker before retrying the request. You can find valid URL at https://app.metaapi.cloud/api-access/api-urls
+[2026-02-27 21:24:24] [WARN] Trade ABORTED — order was NOT placed on MetaTrader. Nothing saved.
+[2026-02-27 21:43:43] [INFO] Raw payload: {"action":"buy","symbol":"GOLD","sl":"1","tp":"0","lot":0.01,"price":5237.313,"time":"2026-02-27T18:42:00Z","secret":"your_webhook_secret"}
+[2026-02-27 21:43:43] [INFO] Signal received: BUY GOLD | Lot: 0.01 | SL: 1 | TP: 0
+[2026-02-27 21:43:48] [ERR] MetaTrader rejected order!
+[2026-02-27 21:43:48] [ERR]   Type   : TimeoutError
+[2026-02-27 21:43:48] [ERR]   Reason : It seems like the account cd2c02a3-7c58-4c80-bebc-343f71863e58 is not connected to broker yet or request URL you use does not match the account region. Please make sure account is connected to broker before retrying the request. You can find valid URL at https://app.metaapi.cloud/api-access/api-urls
+[2026-02-27 21:43:48] [WARN] Trade ABORTED — order was NOT placed on MetaTrader. Nothing saved.
+[2026-02-27 22:10:49] [INFO] Raw payload: {"action":"sell","symbol":"GOLD","sl":"0","tp":"0","lot":0.01,"price":5243.663,"time":"2026-02-27T19:09:00Z","secret":"your_webhook_secret"}
+[2026-02-27 22:10:49] [INFO] Signal received: SELL GOLD | Lot: 0.01 | SL: 0 | TP: 0
+[2026-02-27 22:10:54] [ERR] MetaTrader rejected order!
+[2026-02-27 22:10:54] [ERR]   Type   : TimeoutError
+[2026-02-27 22:10:54] [ERR]   Reason : It seems like the account cd2c02a3-7c58-4c80-bebc-343f71863e58 is not connected to broker yet or request URL you use does not match the account region. Please make sure account is connected to broker before retrying the request. You can find valid URL at https://app.metaapi.cloud/api-access/api-urls
+[2026-02-27 22:10:54] [WARN] Trade ABORTED — order was NOT placed on MetaTrader. Nothing saved.
+[2026-02-27 22:51:00] [INFO] Raw payload: {"action":"buy","symbol":"GOLD","sl":"1","tp":"0","lot":0.01,"price":5250.52,"time":"2026-02-27T19:51:00Z","secret":"your_webhook_secret"}
+[2026-02-27 22:51:00] [INFO] Signal received: BUY GOLD | Lot: 0.01 | SL: 1 | TP: 0
+[2026-02-27 22:51:05] [ERR] MetaTrader rejected order!
+[2026-02-27 22:51:05] [ERR]   Type   : TimeoutError
+[2026-02-27 22:51:05] [ERR]   Reason : It seems like the account cd2c02a3-7c58-4c80-bebc-343f71863e58 is not connected to broker yet or request URL you use does not match the account region. Please make sure account is connected to broker before retrying the request. You can find valid URL at https://app.metaapi.cloud/api-access/api-urls
+[2026-02-27 22:51:05] [WARN] Trade ABORTED — order was NOT placed on MetaTrader. Nothing saved.
+[2026-02-27 22:58:05] [INFO] Raw payload: {"action":"buy","symbol":"GOLD","sl":"1","tp":"0","lot":0.01,"price":5251.07,"time":"2026-02-27T19:57:00Z","secret":"your_webhook_secret"}
+[2026-02-27 22:58:05] [INFO] Signal received: BUY GOLD | Lot: 0.01 | SL: 1 | TP: 0
+[2026-02-27 22:58:10] [ERR] MetaTrader rejected order!
+[2026-02-27 22:58:10] [ERR]   Type   : TimeoutError
+[2026-02-27 22:58:10] [ERR]   Reason : It seems like the account cd2c02a3-7c58-4c80-bebc-343f71863e58 is not connected to broker yet or request URL you use does not match the account region. Please make sure account is connected to broker before retrying the request. You can find valid URL at https://app.metaapi.cloud/api-access/api-urls
+[2026-02-27 22:58:10] [WARN] Trade ABORTED — order was NOT placed on MetaTrader. Nothing saved.
+[2026-02-27 23:00:16] [INFO] Raw payload: {"action":"buy","symbol":"GOLD","sl":"1","tp":"0","lot":0.01,"price":5250.738,"time":"2026-02-27T20:00:00Z","secret":"your_webhook_secret"}
+[2026-02-27 23:00:16] [INFO] Signal received: BUY GOLD | Lot: 0.01 | SL: 1 | TP: 0
+[2026-02-27 23:00:22] [ERR] MetaTrader rejected order!
+[2026-02-27 23:00:22] [ERR]   Type   : TimeoutError
+[2026-02-27 23:00:22] [ERR]   Reason : It seems like the account cd2c02a3-7c58-4c80-bebc-343f71863e58 is not connected to broker yet or request URL you use does not match the account region. Please make sure account is connected to broker before retrying the request. You can find valid URL at https://app.metaapi.cloud/api-access/api-urls
+[2026-02-27 23:00:22] [WARN] Trade ABORTED — order was NOT placed on MetaTrader. Nothing saved.
+[2026-02-28 00:16:02] [INFO] Raw payload: {"action":"sell","symbol":"GOLD","sl":"0","tp":"0","lot":0.01,"price":5257.02,"time":"2026-02-27T21:15:00Z","secret":"your_webhook_secret"}
+[2026-02-28 00:16:02] [INFO] Signal received: SELL GOLD | Lot: 0.01 | SL: 0 | TP: 0
+[2026-02-28 00:16:07] [ERR] MetaTrader rejected order!
+[2026-02-28 00:16:07] [ERR]   Type   : TimeoutError
+[2026-02-28 00:16:07] [ERR]   Reason : It seems like the account cd2c02a3-7c58-4c80-bebc-343f71863e58 is not connected to broker yet or request URL you use does not match the account region. Please make sure account is connected to broker before retrying the request. You can find valid URL at https://app.metaapi.cloud/api-access/api-urls
+[2026-02-28 00:16:07] [WARN] Trade ABORTED — order was NOT placed on MetaTrader. Nothing saved.
+[2026-02-28 07:00:58] [WARN] No open trade to sync.
+[2026-02-28 07:01:13] [WARN] No open trade to close.
+[2026-02-28 07:02:58] [INFO] Sending test BUY signal for BTCUSDT...
+[2026-02-28 07:02:58] [INFO] Signal received: BUY BTCUSDT | Lot: 0.02 | SL: — | TP: —
+[2026-02-28 07:03:03] [ERR] MetaTrader rejected order!
+[2026-02-28 07:03:03] [ERR]   Type   : TimeoutError
+[2026-02-28 07:03:03] [ERR]   Reason : It seems like the account cd2c02a3-7c58-4c80-bebc-343f71863e58 is not connected to broker yet or request URL you use does not match the account region. Please make sure account is connected to broker before retrying the request. You can find valid URL at https://app.metaapi.cloud/api-access/api-urls
+[2026-02-28 07:03:03] [WARN] Trade ABORTED — order was NOT placed on MetaTrader. Nothing saved.
+[2026-02-28 07:03:12] [INFO] Sending test BUY signal for BTCUSDT...
+[2026-02-28 07:03:12] [INFO] Signal received: BUY BTCUSDT | Lot: 0.02 | SL: — | TP: —
+[2026-02-28 07:03:17] [ERR] MetaTrader rejected order!
+[2026-02-28 07:03:17] [ERR]   Type   : TimeoutError
+[2026-02-28 07:03:17] [ERR]   Reason : It seems like the account cd2c02a3-7c58-4c80-bebc-343f71863e58 is not connected to broker yet or request URL you use does not match the account region. Please make sure account is connected to broker before retrying the request. You can find valid URL at https://app.metaapi.cloud/api-access/api-urls
+[2026-02-28 07:03:17] [WARN] Trade ABORTED — order was NOT placed on MetaTrader. Nothing saved.
+[2026-02-28 13:50:50] [WARN] Unknown command: ls. Type help for commands.
+[2026-02-28 13:50:57] [WARN] Unknown command: helo. Type help for commands.
+[2026-03-02 03:02:19] [INFO] Raw payload: {"action":"sell","symbol":"GOLD","sl":"0","tp":"0","lot":0.01,"price":5370.442,"time":"2026-03-02T00:00:00Z","secret":"your_webhook_secret"}
+[2026-03-02 03:02:19] [INFO] Signal received: SELL GOLD | Lot: 0.01 | SL: 0 | TP: 0
+[2026-03-02 03:02:24] [ERR] MetaTrader rejected order!
+[2026-03-02 03:02:24] [ERR]   Type   : TimeoutError
+[2026-03-02 03:02:24] [ERR]   Reason : It seems like the account cd2c02a3-7c58-4c80-bebc-343f71863e58 is not connected to broker yet or request URL you use does not match the account region. Please make sure account is connected to broker before retrying the request. You can find valid URL at https://app.metaapi.cloud/api-access/api-urls
+[2026-03-02 03:02:24] [WARN] Trade ABORTED — order was NOT placed on MetaTrader. Nothing saved.
+[2026-03-02 03:06:09] [INFO] Raw payload: {"action":"sell","symbol":"GOLD","sl":"0","tp":"0","lot":0.01,"price":5369.78,"time":"2026-03-02T00:06:00Z","secret":"your_webhook_secret"}
+[2026-03-02 03:06:09] [INFO] Signal received: SELL GOLD | Lot: 0.01 | SL: 0 | TP: 0
+[2026-03-02 03:06:14] [ERR] MetaTrader rejected order!
+[2026-03-02 03:06:14] [ERR]   Type   : TimeoutError
+[2026-03-02 03:06:14] [ERR]   Reason : It seems like the account cd2c02a3-7c58-4c80-bebc-343f71863e58 is not connected to broker yet or request URL you use does not match the account region. Please make sure account is connected to broker before retrying the request. You can find valid URL at https://app.metaapi.cloud/api-access/api-urls
+[2026-03-02 03:06:14] [WARN] Trade ABORTED — order was NOT placed on MetaTrader. Nothing saved.
+[2026-03-02 04:39:57] [INFO] Raw payload: {"action":"buy","symbol":"GOLD","sl":"1","tp":"0","lot":0.01,"price":5334.663,"time":"2026-03-02T01:39:00Z","secret":"your_webhook_secret"}
+[2026-03-02 04:39:57] [INFO] Signal received: BUY GOLD | Lot: 0.01 | SL: 1 | TP: 0
+[2026-03-02 04:40:03] [ERR] MetaTrader rejected order!
+[2026-03-02 04:40:03] [ERR]   Type   : TimeoutError
+[2026-03-02 04:40:03] [ERR]   Reason : It seems like the account cd2c02a3-7c58-4c80-bebc-343f71863e58 is not connected to broker yet or request URL you use does not match the account region. Please make sure account is connected to broker before retrying the request. You can find valid URL at https://app.metaapi.cloud/api-access/api-urls
+[2026-03-02 04:40:03] [WARN] Trade ABORTED — order was NOT placed on MetaTrader. Nothing saved.
+[2026-03-02 04:42:40] [INFO] Raw payload: {"action":"buy","symbol":"GOLD","sl":"1","tp":"0","lot":0.01,"price":5336.998,"time":"2026-03-02T01:42:00Z","secret":"your_webhook_secret"}
+[2026-03-02 04:42:40] [INFO] Signal received: BUY GOLD | Lot: 0.01 | SL: 1 | TP: 0
+[2026-03-02 04:42:45] [ERR] MetaTrader rejected order!
+[2026-03-02 04:42:45] [ERR]   Type   : TimeoutError
+[2026-03-02 04:42:45] [ERR]   Reason : It seems like the account cd2c02a3-7c58-4c80-bebc-343f71863e58 is not connected to broker yet or request URL you use does not match the account region. Please make sure account is connected to broker before retrying the request. You can find valid URL at https://app.metaapi.cloud/api-access/api-urls
+[2026-03-02 04:42:45] [WARN] Trade ABORTED — order was NOT placed on MetaTrader. Nothing saved.
+[2026-03-02 05:53:59] [INFO] Raw payload: {"action":"sell","symbol":"GOLD","sl":"0","tp":"0","lot":0.01,"price":5340.26,"time":"2026-03-02T02:51:00Z","secret":"your_webhook_secret"}
+[2026-03-02 05:53:59] [INFO] Signal received: SELL GOLD | Lot: 0.01 | SL: 0 | TP: 0
+[2026-03-02 05:54:04] [ERR] MetaTrader rejected order!
+[2026-03-02 05:54:04] [ERR]   Type   : TimeoutError
+[2026-03-02 05:54:04] [ERR]   Reason : It seems like the account cd2c02a3-7c58-4c80-bebc-343f71863e58 is not connected to broker yet or request URL you use does not match the account region. Please make sure account is connected to broker before retrying the request. You can find valid URL at https://app.metaapi.cloud/api-access/api-urls
+[2026-03-02 05:54:04] [WARN] Trade ABORTED — order was NOT placed on MetaTrader. Nothing saved.
+[2026-03-02 06:12:27] [INFO] Raw payload: {"action":"buy","symbol":"GOLD","sl":"1","tp":"0","lot":0.01,"price":5356,"time":"2026-03-02T03:12:00Z","secret":"your_webhook_secret"}
+[2026-03-02 06:12:27] [INFO] Signal received: BUY GOLD | Lot: 0.01 | SL: 1 | TP: 0
+[2026-03-02 06:12:33] [ERR] MetaTrader rejected order!
+[2026-03-02 06:12:33] [ERR]   Type   : TimeoutError
+[2026-03-02 06:12:33] [ERR]   Reason : It seems like the account cd2c02a3-7c58-4c80-bebc-343f71863e58 is not connected to broker yet or request URL you use does not match the account region. Please make sure account is connected to broker before retrying the request. You can find valid URL at https://app.metaapi.cloud/api-access/api-urls
+[2026-03-02 06:12:33] [WARN] Trade ABORTED — order was NOT placed on MetaTrader. Nothing saved.
+[2026-03-02 06:19:32] [INFO] Raw payload: {"action":"buy","symbol":"GOLD","sl":"1","tp":"0","lot":0.01,"price":5356.437,"time":"2026-03-02T03:18:00Z","secret":"your_webhook_secret"}
+[2026-03-02 06:19:32] [INFO] Signal received: BUY GOLD | Lot: 0.01 | SL: 1 | TP: 0
+[2026-03-02 06:19:38] [ERR] MetaTrader rejected order!
+[2026-03-02 06:19:38] [ERR]   Type   : TimeoutError
+[2026-03-02 06:19:38] [ERR]   Reason : It seems like the account cd2c02a3-7c58-4c80-bebc-343f71863e58 is not connected to broker yet or request URL you use does not match the account region. Please make sure account is connected to broker before retrying the request. You can find valid URL at https://app.metaapi.cloud/api-access/api-urls
+[2026-03-02 06:19:38] [WARN] Trade ABORTED — order was NOT placed on MetaTrader. Nothing saved.
+[2026-03-02 07:08:19] [INFO] Raw payload: {"action":"sell","symbol":"GOLD","sl":"0","tp":"0","lot":0.01,"price":5357.09,"time":"2026-03-02T04:06:00Z","secret":"your_webhook_secret"}
+[2026-03-02 07:08:19] [INFO] Signal received: SELL GOLD | Lot: 0.01 | SL: 0 | TP: 0
+[2026-03-02 07:08:24] [ERR] MetaTrader rejected order!
+[2026-03-02 07:08:24] [ERR]   Type   : TimeoutError
+[2026-03-02 07:08:24] [ERR]   Reason : It seems like the account cd2c02a3-7c58-4c80-bebc-343f71863e58 is not connected to broker yet or request URL you use does not match the account region. Please make sure account is connected to broker before retrying the request. You can find valid URL at https://app.metaapi.cloud/api-access/api-urls
+[2026-03-02 07:08:24] [WARN] Trade ABORTED — order was NOT placed on MetaTrader. Nothing saved.
+[2026-03-02 08:34:45] [INFO] Raw payload: {"action":"buy","symbol":"GOLD","sl":"1","tp":"0","lot":0.01,"price":5357.803,"time":"2026-03-02T05:33:00Z","secret":"your_webhook_secret"}
+[2026-03-02 08:34:45] [INFO] Signal received: BUY GOLD | Lot: 0.01 | SL: 1 | TP: 0
+[2026-03-02 08:34:50] [ERR] MetaTrader rejected order!
+[2026-03-02 08:34:50] [ERR]   Type   : TimeoutError
+[2026-03-02 08:34:50] [ERR]   Reason : It seems like the account cd2c02a3-7c58-4c80-bebc-343f71863e58 is not connected to broker yet or request URL you use does not match the account region. Please make sure account is connected to broker before retrying the request. You can find valid URL at https://app.metaapi.cloud/api-access/api-urls
+[2026-03-02 08:34:50] [WARN] Trade ABORTED — order was NOT placed on MetaTrader. Nothing saved.
+[2026-03-02 08:38:30] [INFO] Raw payload: {"action":"buy","symbol":"GOLD","sl":"1","tp":"0","lot":0.01,"price":5358.08,"time":"2026-03-02T05:36:00Z","secret":"your_webhook_secret"}
+[2026-03-02 08:38:30] [INFO] Signal received: BUY GOLD | Lot: 0.01 | SL: 1 | TP: 0
+[2026-03-02 08:38:35] [ERR] MetaTrader rejected order!
+[2026-03-02 08:38:35] [ERR]   Type   : TimeoutError
+[2026-03-02 08:38:35] [ERR]   Reason : It seems like the account cd2c02a3-7c58-4c80-bebc-343f71863e58 is not connected to broker yet or request URL you use does not match the account region. Please make sure account is connected to broker before retrying the request. You can find valid URL at https://app.metaapi.cloud/api-access/api-urls
+[2026-03-02 08:38:35] [WARN] Trade ABORTED — order was NOT placed on MetaTrader. Nothing saved.
+[2026-03-02 10:32:39] [INFO] Raw payload: {"action":"sell","symbol":"GOLD","sl":"0","tp":"0","lot":0.01,"price":5406.57,"time":"2026-03-02T07:30:00Z","secret":"your_webhook_secret"}
+[2026-03-02 10:32:39] [INFO] Signal received: SELL GOLD | Lot: 0.01 | SL: 0 | TP: 0
+[2026-03-02 10:32:44] [ERR] MetaTrader rejected order!
+[2026-03-02 10:32:44] [ERR]   Type   : TimeoutError
+[2026-03-02 10:32:44] [ERR]   Reason : It seems like the account cd2c02a3-7c58-4c80-bebc-343f71863e58 is not connected to broker yet or request URL you use does not match the account region. Please make sure account is connected to broker before retrying the request. You can find valid URL at https://app.metaapi.cloud/api-access/api-urls
+[2026-03-02 10:32:44] [WARN] Trade ABORTED — order was NOT placed on MetaTrader. Nothing saved.
+[2026-03-02 10:37:19] [INFO] Raw payload: {"action":"sell","symbol":"GOLD","sl":"0","tp":"0","lot":0.01,"price":5403.725,"time":"2026-03-02T07:36:00Z","secret":"your_webhook_secret"}
+[2026-03-02 10:37:19] [INFO] Signal received: SELL GOLD | Lot: 0.01 | SL: 0 | TP: 0
+[2026-03-02 10:37:24] [ERR] MetaTrader rejected order!
+[2026-03-02 10:37:24] [ERR]   Type   : TimeoutError
+[2026-03-02 10:37:24] [ERR]   Reason : It seems like the account cd2c02a3-7c58-4c80-bebc-343f71863e58 is not connected to broker yet or request URL you use does not match the account region. Please make sure account is connected to broker before retrying the request. You can find valid URL at https://app.metaapi.cloud/api-access/api-urls
+[2026-03-02 10:37:24] [WARN] Trade ABORTED — order was NOT placed on MetaTrader. Nothing saved.
+[2026-03-02 10:47:03] [INFO] Raw payload: {"action":"buy","symbol":"GOLD","sl":"1","tp":"0","lot":0.01,"price":5409.9,"time":"2026-03-02T07:45:00Z","secret":"your_webhook_secret"}
+[2026-03-02 10:47:03] [INFO] Signal received: BUY GOLD | Lot: 0.01 | SL: 1 | TP: 0
+[2026-03-02 10:47:08] [ERR] MetaTrader rejected order!
+[2026-03-02 10:47:08] [ERR]   Type   : TimeoutError
+[2026-03-02 10:47:08] [ERR]   Reason : It seems like the account cd2c02a3-7c58-4c80-bebc-343f71863e58 is not connected to broker yet or request URL you use does not match the account region. Please make sure account is connected to broker before retrying the request. You can find valid URL at https://app.metaapi.cloud/api-access/api-urls
+[2026-03-02 10:47:08] [WARN] Trade ABORTED — order was NOT placed on MetaTrader. Nothing saved.
+[2026-03-02 11:42:29] [INFO] Raw payload: {"action":"sell","symbol":"GOLD","sl":"0","tp":"0","lot":0.01,"price":5404.77,"time":"2026-03-02T08:42:00Z","secret":"your_webhook_secret"}
+[2026-03-02 11:42:29] [INFO] Signal received: SELL GOLD | Lot: 0.01 | SL: 0 | TP: 0
+[2026-03-02 11:42:34] [ERR] MetaTrader rejected order!
+[2026-03-02 11:42:34] [ERR]   Type   : TimeoutError
+[2026-03-02 11:42:34] [ERR]   Reason : It seems like the account cd2c02a3-7c58-4c80-bebc-343f71863e58 is not connected to broker yet or request URL you use does not match the account region. Please make sure account is connected to broker before retrying the request. You can find valid URL at https://app.metaapi.cloud/api-access/api-urls
+[2026-03-02 11:42:34] [WARN] Trade ABORTED — order was NOT placed on MetaTrader. Nothing saved.
+[2026-03-02 12:32:02] [INFO] Raw payload: {"action":"buy","symbol":"GOLD","sl":"1","tp":"0","lot":0.01,"price":5400.23,"time":"2026-03-02T09:30:00Z","secret":"your_webhook_secret"}
+[2026-03-02 12:32:02] [INFO] Signal received: BUY GOLD | Lot: 0.01 | SL: 1 | TP: 0
+[2026-03-02 12:32:08] [ERR] MetaTrader rejected order!
+[2026-03-02 12:32:08] [ERR]   Type   : TimeoutError
+[2026-03-02 12:32:08] [ERR]   Reason : It seems like the account cd2c02a3-7c58-4c80-bebc-343f71863e58 is not connected to broker yet or request URL you use does not match the account region. Please make sure account is connected to broker before retrying the request. You can find valid URL at https://app.metaapi.cloud/api-access/api-urls
+[2026-03-02 12:32:08] [WARN] Trade ABORTED — order was NOT placed on MetaTrader. Nothing saved.
+[2026-03-02 12:33:30] [INFO] Raw payload: {"action":"buy","symbol":"GOLD","sl":"1","tp":"0","lot":0.01,"price":5400.528,"time":"2026-03-02T09:33:00Z","secret":"your_webhook_secret"}
+[2026-03-02 12:33:30] [INFO] Signal received: BUY GOLD | Lot: 0.01 | SL: 1 | TP: 0
+[2026-03-02 12:33:35] [ERR] MetaTrader rejected order!
+[2026-03-02 12:33:35] [ERR]   Type   : TimeoutError
+[2026-03-02 12:33:35] [ERR]   Reason : It seems like the account cd2c02a3-7c58-4c80-bebc-343f71863e58 is not connected to broker yet or request URL you use does not match the account region. Please make sure account is connected to broker before retrying the request. You can find valid URL at https://app.metaapi.cloud/api-access/api-urls
+[2026-03-02 12:33:35] [WARN] Trade ABORTED — order was NOT placed on MetaTrader. Nothing saved.
+[2026-03-02 13:32:08] [WARN] No open trade to close.
+[2026-03-02 13:37:15] [INFO] Raw payload: {"action":"buy","symbol":"GOLD","sl":"1","tp":"0","lot":0.01,"price":5396.76,"time":"2026-03-02T10:36:00Z","secret":"your_webhook_secret"}
+[2026-03-02 13:37:15] [INFO] Signal received: BUY GOLD | Lot: 0.01 | SL: 1 | TP: 0
+[2026-03-02 13:37:20] [ERR] MetaTrader rejected order!
+[2026-03-02 13:37:20] [ERR]   Type   : TimeoutError
+[2026-03-02 13:37:20] [ERR]   Reason : It seems like the account cd2c02a3-7c58-4c80-bebc-343f71863e58 is not connected to broker yet or request URL you use does not match the account region. Please make sure account is connected to broker before retrying the request. You can find valid URL at https://app.metaapi.cloud/api-access/api-urls
+[2026-03-02 13:37:20] [WARN] Trade ABORTED — order was NOT placed on MetaTrader. Nothing saved.
+[2026-03-02 13:41:25] [INFO] Raw payload: {"action":"buy","symbol":"GOLD","sl":"1","tp":"0","lot":0.01,"price":5396.783,"time":"2026-03-02T10:39:00Z","secret":"your_webhook_secret"}
+[2026-03-02 13:41:25] [INFO] Signal received: BUY GOLD | Lot: 0.01 | SL: 1 | TP: 0
+[2026-03-02 13:41:30] [ERR] MetaTrader rejected order!
+[2026-03-02 13:41:30] [ERR]   Type   : TimeoutError
+[2026-03-02 13:41:30] [ERR]   Reason : It seems like the account cd2c02a3-7c58-4c80-bebc-343f71863e58 is not connected to broker yet or request URL you use does not match the account region. Please make sure account is connected to broker before retrying the request. You can find valid URL at https://app.metaapi.cloud/api-access/api-urls
+[2026-03-02 13:41:30] [WARN] Trade ABORTED — order was NOT placed on MetaTrader. Nothing saved.
+[2026-03-02 13:43:42] [INFO] Raw payload: {"action":"buy","symbol":"GOLD","sl":"1","tp":"0","lot":0.01,"price":5397.102,"time":"2026-03-02T10:42:00Z","secret":"your_webhook_secret"}
+[2026-03-02 13:43:42] [INFO] Signal received: BUY GOLD | Lot: 0.01 | SL: 1 | TP: 0
+[2026-03-02 13:43:48] [ERR] MetaTrader rejected order!
+[2026-03-02 13:43:48] [ERR]   Type   : TimeoutError
+[2026-03-02 13:43:48] [ERR]   Reason : It seems like the account cd2c02a3-7c58-4c80-bebc-343f71863e58 is not connected to broker yet or request URL you use does not match the account region. Please make sure account is connected to broker before retrying the request. You can find valid URL at https://app.metaapi.cloud/api-access/api-urls
+[2026-03-02 13:43:48] [WARN] Trade ABORTED — order was NOT placed on MetaTrader. Nothing saved.
+[2026-03-02 13:53:39] [INFO] Raw payload: {"action":"sell","symbol":"GOLD","sl":"0","tp":"0","lot":0.01,"price":5385.62,"time":"2026-03-02T10:51:00Z","secret":"your_webhook_secret"}
+[2026-03-02 13:53:39] [INFO] Signal received: SELL GOLD | Lot: 0.01 | SL: 0 | TP: 0
+[2026-03-02 13:53:44] [ERR] MetaTrader rejected order!
+[2026-03-02 13:53:44] [ERR]   Type   : TimeoutError
+[2026-03-02 13:53:44] [ERR]   Reason : It seems like the account cd2c02a3-7c58-4c80-bebc-343f71863e58 is not connected to broker yet or request URL you use does not match the account region. Please make sure account is connected to broker before retrying the request. You can find valid URL at https://app.metaapi.cloud/api-access/api-urls
+[2026-03-02 13:53:44] [WARN] Trade ABORTED — order was NOT placed on MetaTrader. Nothing saved.
+[2026-03-02 14:00:22] [WARN] No open trade to sync.
+[2026-03-02 14:01:00] [WARN] Unknown command: sudo. Type help for commands.
+[2026-03-02 14:01:34] [OK] Webhook server listening on port 80
+[2026-03-02 14:01:34] [INFO] TradingView webhook URL: http://54.204.233.214:80/webhook
+[2026-03-02 14:01:34] [INFO] Health check: http://54.204.233.214:80/
+[2026-03-02 14:01:34] [INFO] Log file: /home/ubuntu/trading-bot/bot.log
+[2026-03-02 14:02:47] [OK] Webhook server listening on port 80
+[2026-03-02 14:02:47] [INFO] TradingView webhook URL: http://54.204.233.214:80/webhook
+[2026-03-02 14:02:47] [INFO] Health check: http://54.204.233.214:80/
+[2026-03-02 14:02:47] [INFO] Log file: /home/ubuntu/trading-bot/bot.log
+[2026-03-02 14:03:14] [WARN] Unknown command: ls. Type help for commands.
+[2026-03-02 14:03:33] [WARN] No open trade to sync.
+[2026-03-02 14:03:53] [INFO] Sending test BUY signal for GOLD...
+[2026-03-02 14:03:53] [INFO] Signal received: BUY GOLD | Lot: 0.02 | SL: — | TP: —
+[2026-03-02 14:03:53] [ERR] MetaTrader rejected order!
+[2026-03-02 14:03:53] [ERR]   Type   : MetaAPIError
+[2026-03-02 14:03:53] [ERR]   Reason : Request completed
+[2026-03-02 14:03:53] [WARN] Trade ABORTED — order was NOT placed on MetaTrader. Nothing saved.
+[2026-03-02 14:04:21] [INFO] Sending test BUY signal for BTCUSD...
+[2026-03-02 14:04:21] [INFO] Signal received: BUY BTCUSD | Lot: 0.02 | SL: — | TP: —
+[2026-03-02 14:04:22] [ERR] MetaTrader rejected order!
+[2026-03-02 14:04:22] [ERR]   Type   : MetaAPIError
+[2026-03-02 14:04:22] [ERR]   Reason : Request completed
+[2026-03-02 14:04:22] [WARN] Trade ABORTED — order was NOT placed on MetaTrader. Nothing saved.
+[2026-03-02 14:05:37] [INFO] Sending test BUY signal for GOLD...
+[2026-03-02 14:05:37] [INFO] Signal received: BUY GOLD | Lot: 0.02 | SL: — | TP: —
+[2026-03-02 14:05:38] [ERR] MetaTrader rejected order!
+[2026-03-02 14:05:38] [ERR]   Type   : MetaAPIError
+[2026-03-02 14:05:38] [ERR]   Reason : Request completed
+[2026-03-02 14:05:38] [WARN] Trade ABORTED — order was NOT placed on MetaTrader. Nothing saved.
+[2026-03-02 14:06:00] [WARN] No open trade to sync.
+[2026-03-02 14:06:05] [WARN] No open trade to sync.
+[2026-03-02 14:06:17] [WARN] No open trade to close.
+[2026-03-02 14:10:13] [INFO] Raw payload: {"action":"buy","symbol":"GOLD","sl":"1","tp":"0","lot":0.01,"price":5396.76,"time":"2026-03-02T10:36:00Z","secret":"your_webhook_secret"}
+[2026-03-02 14:10:13] [INFO] Signal received: BUY GOLD | Lot: 0.01 | SL: 1 | TP: 0
+[2026-03-02 14:10:13] [ERR] MetaTrader rejected order!
+[2026-03-02 14:10:13] [ERR]   Type   : MetaAPIError
+[2026-03-02 14:10:13] [ERR]   Reason : Request completed
+[2026-03-02 14:10:13] [WARN] Trade ABORTED — order was NOT placed on MetaTrader. Nothing saved.
+[2026-03-02 14:13:39] [INFO] Raw payload: {"action":"close","symbol":"GOLD"}
+[2026-03-02 14:13:39] [INFO] Signal received: CLOSE GOLD | Lot: 0.02 | SL: — | TP: —
+[2026-03-02 14:13:39] [WARN] No open trade to close.
+[2026-03-02 14:18:17] [INFO] Raw payload: {"action":"buy","symbol":"GOLD","sl":"1","tp":"0","lot":0.01,"price":5395.397,"time":"2026-03-02T11:18:00Z","secret":"your_webhook_secret"}
+[2026-03-02 14:18:17] [INFO] Signal received: BUY GOLD | Lot: 0.01 | SL: 1 | TP: 0
+[2026-03-02 14:18:18] [ERR] MetaTrader rejected order!
+[2026-03-02 14:18:18] [ERR]   Type   : MetaAPIError
+[2026-03-02 14:18:18] [ERR]   Reason : Request completed
+[2026-03-02 14:18:18] [WARN] Trade ABORTED — order was NOT placed on MetaTrader. Nothing saved.
+[2026-03-02 14:41:06] [OK] Webhook server on port 80
+[2026-03-02 14:41:06] [INFO] Webhook URL : http://54.204.233.214/webhook
+[2026-03-02 14:41:06] [INFO] Health check: http://54.204.233.214/
+[2026-03-02 14:41:06] [INFO] Log file    : /home/ubuntu/trading-bot/bot.log
+[2026-03-02 14:41:44] [WARN] No open trade in DB to sync.
+[2026-03-02 14:42:48] [INFO] Payload: {"action":"buy","symbol":"GOLD","sl":"1","tp":"0","lot":0.01,"price":5396.76,"time":"2026-03-02T10:36:00Z","secret":"your_webhook_secret"}
+[2026-03-02 14:42:48] [INFO] Signal: BUY GOLD | Lot:0.01 | SL:1 | TP:0
+[2026-03-02 14:42:49] [OK] Order confirmed! positionId:686524037
+[2026-03-02 14:42:49] [BUY] BUY OPENED GOLD | Entry:5393.83 | SL:1 | TP:0 | Lot:0.01
+[2026-03-02 14:44:08] [INFO] Payload: {"action":"buy","symbol":"GOLD","sl":"1","tp":"0","lot":0.01,"price":5396.76,"time":"2026-03-02T10:36:00Z","secret":"your_webhook_secret"}
+[2026-03-02 14:44:08] [INFO] Signal: BUY GOLD | Lot:0.01 | SL:1 | TP:0
+[2026-03-02 14:44:08] [WARN] BUY already running! ID:T1772451769514-2D7U (GOLD)
+[2026-03-02 14:44:49] [INFO] Payload: {"action":"sell","symbol":"GOLD","sl":"1","tp":"0","lot":0.01,"price":5396.76,"time":"2026-03-02T10:36:00Z","secret":"your_webhook_secret"}
+[2026-03-02 14:44:49] [INFO] Signal: SELL GOLD | Lot:0.01 | SL:1 | TP:0
+[2026-03-02 14:44:49] [TRADE] FLIP: closing BUY → opening SELL
+[2026-03-02 14:44:49] [TRADE] Closing BUY GOLD | Reason: flipped to SELL
+[2026-03-02 14:44:50] [OK] MT closed. Price:N/A PnL:N/A
+[2026-03-02 14:44:50] [INFO] Getting AI summary...
+[2026-03-02 14:44:50] [PNL] Final PnL: N/A
+[2026-03-02 14:44:50] [OK] Flip: BUY closed ✔  Opening SELL...
+[2026-03-02 14:44:50] [WARN] No positionId in trade response — polling positions...
+[2026-03-02 14:44:52] [WARN] MetaAPI timed out — waiting 4s then polling MT positions...
+[2026-03-02 14:44:56] [ERR] No matching SELL position found on MT after timeout.
+[2026-03-02 14:44:56] [ERR] Cannot confirm trade on MT. ABORTED.
+[2026-03-02 14:44:59] [INFO] Payload: {"action":"sell","symbol":"GOLD","sl":"0","tp":"0","lot":0.01,"price":5388.87,"time":"2026-03-02T11:42:00Z","secret":"your_webhook_secret"}
+[2026-03-02 14:44:59] [INFO] Signal: SELL GOLD | Lot:0.01 | SL:0 | TP:0
+[2026-03-02 14:44:59] [OK] Order confirmed! positionId:686526455
+[2026-03-02 14:44:59] [SELL] SELL OPENED GOLD | Entry:5388.76 | SL:0 | TP:0 | Lot:0.01
+[2026-03-02 14:45:19] [INFO] Payload: {"action":"sell","symbol":"GOLD","sl":"0","tp":"0","lot":0.01,"price":5386.5,"time":"2026-03-02T11:45:00Z","secret":"your_webhook_secret"}
+[2026-03-02 14:45:19] [INFO] Signal: SELL GOLD | Lot:0.01 | SL:0 | TP:0
+[2026-03-02 14:45:19] [WARN] SELL already running! ID:T1772451899539-110N (GOLD)
+[2026-03-02 14:48:27] [OK] Webhook server on port 80
+[2026-03-02 14:48:27] [INFO] Webhook URL : http://54.204.233.214/webhook
+[2026-03-02 14:48:27] [INFO] Health check: http://54.204.233.214/
+[2026-03-02 14:48:27] [INFO] Log file    : /home/ubuntu/trading-bot/bot.log
+[2026-03-02 14:49:19] [INFO] Signal: BUY GOLD | Lot:0.02 | SL:— | TP:—
+[2026-03-02 14:49:19] [TRADE] FLIP: closing SELL → opening BUY
+[2026-03-02 14:49:19] [TRADE] Closing SELL GOLD | Reason: flipped to BUY
+[2026-03-02 14:49:19] [OK] MT closed. Price:N/A PnL:N/A
+[2026-03-02 14:49:19] [INFO] Getting AI summary...
+[2026-03-02 14:49:19] [PNL] Final PnL: N/A
+[2026-03-02 14:49:19] [OK] Flip: SELL closed ✔  Opening BUY...
+[2026-03-02 14:49:19] [OK] Order confirmed! positionId:686536055
+[2026-03-02 14:49:19] [BUY] BUY OPENED GOLD | Entry:5385.72 | SL:— | TP:— | Lot:0.02
+[2026-03-02 14:50:43] [INFO] Signal: SELL GOLD | Lot:0.02 | SL:— | TP:—
+[2026-03-02 14:50:43] [TRADE] FLIP: closing BUY → opening SELL
+[2026-03-02 14:50:43] [TRADE] Closing BUY GOLD | Reason: flipped to SELL
+[2026-03-02 14:50:43] [OK] MT closed. Price:N/A PnL:N/A
+[2026-03-02 14:50:43] [INFO] Getting AI summary...
+[2026-03-02 14:50:43] [PNL] Final PnL: N/A
+[2026-03-02 14:50:43] [OK] Flip: BUY closed ✔  Opening SELL...
+[2026-03-02 14:50:43] [OK] Order confirmed! positionId:686537494
+[2026-03-02 14:50:43] [SELL] SELL OPENED GOLD | Entry:5380.16 | SL:— | TP:— | Lot:0.02
+[2026-03-02 14:52:39] [INFO] Payload: {"action":"sell","symbol":"GOLD","sl":"1","tp":"0","lot":0.01,"price":5396.76,"time":"2026-03-02T10:36:00Z","secret":"your_webhook_secret"}
+[2026-03-02 14:52:39] [INFO] Signal: SELL GOLD | Lot:0.01 | SL:1 | TP:0
+[2026-03-02 14:52:39] [WARN] SELL already running! ID:T1772452243727-UXM1 (GOLD)
+[2026-03-02 14:55:46] [OK] Synced from MT successfully.
+[2026-03-02 14:56:02] [TRADE] Closing SELL GOLD | Reason: CLI manual close
+[2026-03-02 14:56:02] [OK] MT closed. Price:N/A PnL:N/A
+[2026-03-02 14:56:02] [INFO] Getting AI summary...
+[2026-03-02 14:56:02] [PNL] Final PnL: N/A
+[2026-03-02 14:56:26] [INFO] Payload: {"action":"buy","symbol":"GOLD","sl":"1","tp":"0","lot":0.01,"price":5396.76,"time":"2026-03-02T10:36:00Z","secret":"your_webhook_secret"}
+[2026-03-02 14:56:26] [INFO] Signal: BUY GOLD | Lot:0.01 | SL:1 | TP:0
+[2026-03-02 14:56:26] [OK] Order confirmed! positionId:686542290
+[2026-03-02 14:56:27] [BUY] BUY OPENED GOLD | Entry:5383.94 | SL:1 | TP:0 | Lot:0.01
+[2026-03-02 14:57:19] [OK] MT position modified. SL:5370 TP:5392
+[2026-03-02 14:57:19] [OK] DB updated. SL:5370 TP:5392
+[2026-03-02 15:00:03] [INFO] Payload: {"action":"buy","symbol":"GOLD","sl":"1","tp":"0","lot":0.01,"price":5396.76,"time":"2026-03-02T10:36:00Z","secret":"your_webhook_secret"}
+[2026-03-02 15:00:03] [INFO] Signal: BUY GOLD | Lot:0.01 | SL:1 | TP:0
+[2026-03-02 15:00:03] [WARN] BUY already running! ID:T1772452587046-XPML (GOLD)
+[2026-03-02 15:00:20] [WARN] Unknown command: "helpclose" — type help
+[2026-03-02 15:00:27] [TRADE] Closing BUY GOLD | Reason: CLI manual close
+[2026-03-02 15:00:28] [OK] MT closed. Price:N/A PnL:N/A
+[2026-03-02 15:00:28] [INFO] Getting AI summary...
+[2026-03-02 15:00:28] [PNL] Final PnL: N/A
+[2026-03-02 15:01:20] [INFO] Payload: {"action":"buy","symbol":"GOLD","sl":"1","tp":"0","lot":0.03,"price":5396.76,"time":"2026-03-02T10:36:00Z","secret":"your_webhook_secret"}
+[2026-03-02 15:01:20] [INFO] Signal: BUY GOLD | Lot:0.03 | SL:1 | TP:0
+[2026-03-02 15:01:20] [OK] Order confirmed! positionId:686545841
+[2026-03-02 15:01:21] [BUY] BUY OPENED GOLD | Entry:5383.21 | SL:1 | TP:0 | Lot:0.03
+[2026-03-02 15:01:46] [OK] MT position modified. SL:5350 TP:—
+[2026-03-02 15:01:46] [OK] DB updated. SL:5350 TP:—
+[2026-03-02 15:02:03] [OK] MT position modified. SL:5350 TP:5390
+[2026-03-02 15:02:03] [OK] DB updated. SL:5350 TP:5390
+[2026-03-02 15:04:42] [WARN] Unknown command: "ls" — type help
+[2026-03-02 15:04:54] [OK] Synced from MT successfully.
+[2026-03-02 15:05:15] [WARN] Unknown command: "h10" — type help
+[2026-03-02 15:08:30] [WARN] Position 686545841 not found on MT — may be closed externally.
+[2026-03-02 15:08:30] [WARN] Use "close" to mark it closed in DB.
+[2026-03-02 15:08:46] [TRADE] Closing BUY GOLD | Reason: CLI manual close
+[2026-03-02 15:08:46] [OK] MT closed. Price:N/A PnL:N/A
+[2026-03-02 15:08:46] [INFO] Getting AI summary...
+[2026-03-02 15:08:46] [PNL] Final PnL: N/A
+[2026-03-02 15:08:53] [WARN] No open trade in DB to sync.
+[2026-03-02 15:09:00] [INFO] Payload: {"action":"buy","symbol":"GOLD","sl":"1","tp":"0","lot":0.01,"price":5391.632,"time":"2026-03-02T12:06:00Z","secret":"your_webhook_secret"}
+[2026-03-02 15:09:00] [INFO] Signal: BUY GOLD | Lot:0.01 | SL:1 | TP:0
+[2026-03-02 15:09:00] [OK] Order confirmed! positionId:686553817
+[2026-03-02 15:09:00] [BUY] BUY OPENED GOLD | Entry:5392.2 | SL:1 | TP:0 | Lot:0.01
+[2026-03-02 15:18:38] [OK] Synced from MT successfully.
+[2026-03-02 15:22:30] [WARN] Unknown command: "clear" — type help
+[2026-03-02 15:38:09] [INFO] Payload: {"action":"sell","symbol":"GOLD","sl":"0","tp":"0","lot":0.01,"price":5388.97,"time":"2026-03-02T12:36:00Z","secret":"your_webhook_secret"}
+[2026-03-02 15:38:09] [INFO] Signal: SELL GOLD | Lot:0.01 | SL:0 | TP:0
+[2026-03-02 15:38:09] [TRADE] FLIP: closing BUY → opening SELL
+[2026-03-02 15:38:09] [TRADE] Closing BUY GOLD | Reason: flipped to SELL
+[2026-03-02 15:38:09] [OK] MT closed. Price:N/A PnL:N/A
+[2026-03-02 15:38:09] [INFO] Getting AI summary...
+[2026-03-02 15:38:09] [PNL] Final PnL: N/A
+[2026-03-02 15:38:09] [OK] Flip: BUY closed ✔  Opening SELL...
+[2026-03-02 15:38:09] [OK] Order confirmed! positionId:686589657
+[2026-03-02 15:38:09] [SELL] SELL OPENED GOLD | Entry:5389.1 | SL:0 | TP:0 | Lot:0.01
+[2026-03-02 15:57:00] [INFO] Payload: {"action":"sell","symbol":"GOLD","sl":"0","tp":"0","lot":0.01,"price":5387.46,"time":"2026-03-02T12:54:00Z","secret":"your_webhook_secret"}
+[2026-03-02 15:57:00] [INFO] Signal: SELL GOLD | Lot:0.01 | SL:0 | TP:0
+[2026-03-02 15:57:00] [WARN] SELL already running! ID:T1772455089976-U9KM (GOLD)
+[2026-03-02 16:06:00] [INFO] Payload: {"action":"buy","symbol":"GOLD","sl":"1","tp":"0","lot":0.01,"price":5406.442,"time":"2026-03-02T13:03:00Z","secret":"your_webhook_secret"}
+[2026-03-02 16:06:00] [INFO] Signal: BUY GOLD | Lot:0.01 | SL:1 | TP:0
+[2026-03-02 16:06:00] [TRADE] FLIP: closing SELL → opening BUY
+[2026-03-02 16:06:00] [TRADE] Closing SELL GOLD | Reason: flipped to BUY
+[2026-03-02 16:06:00] [OK] MT closed. Price:N/A PnL:N/A
+[2026-03-02 16:06:00] [INFO] Getting AI summary...
+[2026-03-02 16:06:00] [PNL] Final PnL: N/A
+[2026-03-02 16:06:00] [OK] Flip: SELL closed ✔  Opening BUY...
+[2026-03-02 16:06:01] [OK] Order confirmed! positionId:686628104
+[2026-03-02 16:06:01] [BUY] BUY OPENED GOLD | Entry:5407.32 | SL:1 | TP:0 | Lot:0.01

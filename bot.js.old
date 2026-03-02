@@ -1,0 +1,1017 @@
+// Advanced Trading Bot with MetaAPI and Telegram Integration
+// Install required packages:
+// npm install metaapi.cloud-sdk grammy dotenv winston technicalindicators
+
+const MetaApi = require('metaapi.cloud-sdk').default;
+const { Bot } = require('grammy');
+const winston = require('winston');
+const {
+  RSI,
+  MACD,
+  BollingerBands,
+  EMA,
+  SMA,
+  ADX,
+  Stochastic,
+  ATR,
+  OBV,
+  CCI,
+  WilliamsR,
+  MFI
+} = require('technicalindicators');
+require('dotenv').config();
+
+// ==================== OPTIMIZED CONFIGURATION ====================
+const CONFIG = {
+  // MetaAPI Configuration
+  META_API_TOKEN: process.env.META_API_TOKEN,
+  ACCOUNT_ID: process.env.ACCOUNT_ID,
+
+  // Telegram Configuration
+  TELEGRAM_BOT_TOKEN: process.env.TELEGRAM_BOT_TOKEN,
+  TELEGRAM_CHAT_ID: process.env.TELEGRAM_CHAT_ID,
+
+  // Trading Configuration
+  SYMBOL: 'EURUSD',
+  TIMEFRAME: '1m', // 15-minute optimal for day trading
+  CANDLE_LOOKBACK: 200, // Fetch more candles for accurate indicators
+
+  // Risk Management (Optimized for consistent profits)
+  RISK_PERCENT: 1.5, // Conservative 1.5% risk per trade
+  MAX_DAILY_LOSS: 4, // Stop trading at 4% daily loss
+  MAX_OPEN_TRADES: 2, // Limit to 2 concurrent trades
+  STOP_LOSS_PIPS: 25, // Tighter stop loss
+  TAKE_PROFIT_RATIO: 2.5, // Risk:Reward = 1:2.5
+  TRAILING_STOP: true, // Enable trailing stop
+  TRAILING_STOP_PIPS: 15, // Activate after 15 pips profit
+
+  // Signal Thresholds
+  MIN_SIGNAL_SCORE: 7, // Higher threshold for better accuracy
+  MIN_CONFIDENCE: 70, // Minimum 70% confidence
+
+  // Optimized Indicator Settings
+  INDICATORS: {
+    // RSI - Best for momentum
+    RSI: {
+      period: 14,
+      oversold: 35, // Adjusted for fewer false signals
+      overbought: 65,
+      enabled: true
+    },
+
+    // MACD - Trend following
+    MACD: {
+      fastPeriod: 12,
+      slowPeriod: 26,
+      signalPeriod: 9,
+      enabled: true
+    },
+
+    // Bollinger Bands - Volatility
+    BB: {
+      period: 20,
+      stdDev: 2,
+      enabled: true
+    },
+
+    // EMA - Moving averages
+    EMA: {
+      fast: 9,
+      medium: 21,
+      slow: 50,
+      enabled: true
+    },
+
+    // SMA - Support/Resistance
+    SMA: {
+      period: 200, // Long-term trend
+      enabled: true
+    },
+
+    // ADX - Trend strength
+    ADX: {
+      period: 14,
+      threshold: 25, // Strong trend above 25
+      enabled: true
+    },
+
+    // Stochastic - Momentum oscillator
+    STOCH: {
+      period: 14,
+      signalPeriod: 3,
+      oversold: 20,
+      overbought: 80,
+      enabled: true
+    },
+
+    // ATR - Volatility for dynamic SL/TP
+    ATR: {
+      period: 14,
+      enabled: true
+    },
+
+    // CCI - Commodity Channel Index
+    CCI: {
+      period: 20,
+      oversold: -100,
+      overbought: 100,
+      enabled: true
+    },
+
+    // Williams %R - Momentum
+    WILLIAMS_R: {
+      period: 14,
+      oversold: -80,
+      overbought: -20,
+      enabled: true
+    },
+
+    // MFI - Money Flow Index (volume-weighted RSI)
+    MFI: {
+      period: 14,
+      oversold: 20,
+      overbought: 80,
+      enabled: true
+    },
+
+    // OBV - On Balance Volume
+    OBV: {
+      enabled: true
+    }
+  }
+};
+
+// ==================== LOGGER SETUP ====================
+const logger = winston.createLogger({
+  level: 'debug',
+  format: winston.format.combine(
+    winston.format.timestamp({ format: 'YYYY-MM-DD HH:mm:ss' }),
+    winston.format.errors({ stack: true }),
+    winston.format.printf(({ timestamp, level, message, stack }) => {
+      return `${timestamp} [${level.toUpperCase()}]: ${stack || message}`;
+    })
+  ),
+  transports: [
+    new winston.transports.File({
+      filename: 'logs/trading-error.log',
+      level: 'error',
+      maxsize: 5242880, // 5MB
+      maxFiles: 5
+    }),
+    new winston.transports.File({
+      filename: 'logs/trading-combined.log',
+      maxsize: 5242880,
+      maxFiles: 5
+    }),
+    new winston.transports.File({
+      filename: 'logs/trades.log',
+      level: 'info',
+      maxsize: 5242880,
+      maxFiles: 10
+    }),
+    new winston.transports.Console({
+      format: winston.format.combine(
+        winston.format.colorize(),
+        winston.format.simple()
+      )
+    })
+  ]
+});
+
+// ==================== TELEGRAM BOT ====================
+class TelegramNotifier {
+  constructor() {
+    this.bot = new Bot(CONFIG.TELEGRAM_BOT_TOKEN);
+    this.chatId = CONFIG.TELEGRAM_CHAT_ID;
+  }
+
+  async send(message) {
+    try {
+      if (!CONFIG.TELEGRAM_BOT_TOKEN || !CONFIG.TELEGRAM_CHAT_ID) {
+        logger.warn('Telegram not configured - skipping notification');
+        return;
+      }
+
+      await this.bot.api.sendMessage(this.chatId, message, { parse_mode: 'HTML' });
+      logger.debug(`Telegram message sent`);
+    } catch (error) {
+      logger.error(`Telegram send error: ${error.message}`);
+    }
+  }
+
+  async sendTrade(type, data) {
+    const emoji = type === 'BUY' ? '🟢📈' : '🔴📉';
+    const message = `
+${emoji} <b>${type} SIGNAL EXECUTED</b> ${emoji}
+━━━━━━━━━━━━━━━━━━━━━━
+📊 <b>Symbol:</b> ${data.symbol}
+💰 <b>Entry:</b> ${data.entry}
+🛑 <b>Stop Loss:</b> ${data.stopLoss} (${CONFIG.STOP_LOSS_PIPS} pips)
+🎯 <b>Take Profit:</b> ${data.takeProfit} (${(CONFIG.STOP_LOSS_PIPS * CONFIG.TAKE_PROFIT_RATIO).toFixed(0)} pips)
+📊 <b>Lot Size:</b> ${data.lotSize}
+💵 <b>Risk Amount:</b> $${data.riskAmount.toFixed(2)}
+🎲 <b>Confidence:</b> ${data.confidence}%
+📈 <b>Score:</b> ${data.score}/15
+
+<b>Active Signals:</b>
+${data.signals.map(s => `• ${s}`).join('\n')}
+━━━━━━━━━━━━━━━━━━━━━━
+⏰ ${new Date().toLocaleString()}
+    `;
+    await this.send(message);
+  }
+
+  async sendPositionUpdate(position, profit) {
+    const emoji = profit >= 0 ? '✅💰' : '❌📉';
+    const message = `
+${emoji} <b>POSITION CLOSED</b> ${emoji}
+━━━━━━━━━━━━━━━━━━━━━━
+📊 <b>Symbol:</b> ${position.symbol}
+${profit >= 0 ? '💵 <b>Profit:</b>' : '💸 <b>Loss:</b>'} $${Math.abs(profit).toFixed(2)}
+📊 <b>Position ID:</b> ${position.id}
+⏰ ${new Date().toLocaleString()}
+━━━━━━━━━━━━━━━━━━━━━━
+    `;
+    await this.send(message);
+  }
+
+  async sendAlert(title, message) {
+    const alert = `⚠️ <b>${title}</b>\n\n${message}\n\n⏰ ${new Date().toLocaleString()}`;
+    await this.send(alert);
+  }
+
+  async sendDailySummary(summary) {
+    const message = `
+📊 <b>DAILY TRADING SUMMARY</b> 📊
+━━━━━━━━━━━━━━━━━━━━━━
+💼 <b>Trades:</b> ${summary.totalTrades}
+✅ <b>Winners:</b> ${summary.winners}
+❌ <b>Losers:</b> ${summary.losers}
+📈 <b>Win Rate:</b> ${summary.winRate}%
+💰 <b>Net P/L:</b> $${summary.netPL.toFixed(2)}
+💵 <b>Account Balance:</b> $${summary.balance.toFixed(2)}
+━━━━━━━━━━━━━━━━━━━━━━
+    `;
+    await this.send(message);
+  }
+}
+
+// ==================== OPTIMIZED TECHNICAL INDICATORS ====================
+class TechnicalAnalysis {
+  constructor() {
+    this.logger = logger;
+  }
+
+  calculateIndicators(candles) {
+    const closes = candles.map(c => c.close);
+    const highs = candles.map(c => c.high);
+    const lows = candles.map(c => c.low);
+    const volumes = candles.map(c => c.tickVolume || c.volume || 1000);
+
+    const indicators = {};
+
+    // RSI
+    if (CONFIG.INDICATORS.RSI.enabled) {
+      const rsi = RSI.calculate({
+        values: closes,
+        period: CONFIG.INDICATORS.RSI.period
+      });
+      indicators.rsi = rsi[rsi.length - 1];
+    }
+
+    // MACD
+    if (CONFIG.INDICATORS.MACD.enabled) {
+      const macd = MACD.calculate({
+        values: closes,
+        fastPeriod: CONFIG.INDICATORS.MACD.fastPeriod,
+        slowPeriod: CONFIG.INDICATORS.MACD.slowPeriod,
+        signalPeriod: CONFIG.INDICATORS.MACD.signalPeriod,
+        SimpleMAOscillator: false,
+        SimpleMASignal: false
+      });
+      const lastMACD = macd[macd.length - 1];
+      indicators.macd = lastMACD ? {
+        macd: lastMACD.MACD,
+        signal: lastMACD.signal,
+        histogram: lastMACD.histogram
+      } : null;
+    }
+
+    // Bollinger Bands
+    if (CONFIG.INDICATORS.BB.enabled) {
+      const bb = BollingerBands.calculate({
+        values: closes,
+        period: CONFIG.INDICATORS.BB.period,
+        stdDev: CONFIG.INDICATORS.BB.stdDev
+      });
+      const lastBB = bb[bb.length - 1];
+      indicators.bb = lastBB ? {
+        upper: lastBB.upper,
+        middle: lastBB.middle,
+        lower: lastBB.lower
+      } : null;
+    }
+
+    // EMA
+    if (CONFIG.INDICATORS.EMA.enabled) {
+      const emaFast = EMA.calculate({
+        values: closes,
+        period: CONFIG.INDICATORS.EMA.fast
+      });
+      const emaMedium = EMA.calculate({
+        values: closes,
+        period: CONFIG.INDICATORS.EMA.medium
+      });
+      const emaSlow = EMA.calculate({
+        values: closes,
+        period: CONFIG.INDICATORS.EMA.slow
+      });
+
+      indicators.ema = {
+        fast: emaFast[emaFast.length - 1],
+        medium: emaMedium[emaMedium.length - 1],
+        slow: emaSlow[emaSlow.length - 1]
+      };
+    }
+
+    // SMA 200
+    if (CONFIG.INDICATORS.SMA.enabled) {
+      const sma200 = SMA.calculate({
+        values: closes,
+        period: CONFIG.INDICATORS.SMA.period
+      });
+      indicators.sma200 = sma200[sma200.length - 1];
+    }
+
+    // ADX
+    if (CONFIG.INDICATORS.ADX.enabled) {
+      const adx = ADX.calculate({
+        high: highs,
+        low: lows,
+        close: closes,
+        period: CONFIG.INDICATORS.ADX.period
+      });
+      const lastADX = adx[adx.length - 1];
+      indicators.adx = lastADX ? lastADX.adx : null;
+    }
+
+    // Stochastic
+    if (CONFIG.INDICATORS.STOCH.enabled) {
+      const stoch = Stochastic.calculate({
+        high: highs,
+        low: lows,
+        close: closes,
+        period: CONFIG.INDICATORS.STOCH.period,
+        signalPeriod: CONFIG.INDICATORS.STOCH.signalPeriod
+      });
+      const lastStoch = stoch[stoch.length - 1];
+      indicators.stoch = lastStoch ? {
+        k: lastStoch.k,
+        d: lastStoch.d
+      } : null;
+    }
+
+    // ATR
+    if (CONFIG.INDICATORS.ATR.enabled) {
+      const atr = ATR.calculate({
+        high: highs,
+        low: lows,
+        close: closes,
+        period: CONFIG.INDICATORS.ATR.period
+      });
+      indicators.atr = atr[atr.length - 1];
+    }
+
+    // CCI
+    if (CONFIG.INDICATORS.CCI.enabled) {
+      const cci = CCI.calculate({
+        high: highs,
+        low: lows,
+        close: closes,
+        period: CONFIG.INDICATORS.CCI.period
+      });
+      indicators.cci = cci[cci.length - 1];
+    }
+
+    // Williams %R
+    if (CONFIG.INDICATORS.WILLIAMS_R.enabled) {
+      const williamsR = WilliamsR.calculate({
+        high: highs,
+        low: lows,
+        close: closes,
+        period: CONFIG.INDICATORS.WILLIAMS_R.period
+      });
+      indicators.williamsR = williamsR[williamsR.length - 1];
+    }
+
+    // MFI
+    if (CONFIG.INDICATORS.MFI.enabled) {
+      const mfi = MFI.calculate({
+        high: highs,
+        low: lows,
+        close: closes,
+        volume: volumes,
+        period: CONFIG.INDICATORS.MFI.period
+      });
+      indicators.mfi = mfi[mfi.length - 1];
+    }
+
+    // OBV
+    if (CONFIG.INDICATORS.OBV.enabled) {
+      const obv = OBV.calculate({
+        close: closes,
+        volume: volumes
+      });
+      indicators.obv = obv[obv.length - 1];
+      indicators.obvPrev = obv[obv.length - 2];
+    }
+
+    return indicators;
+  }
+
+  analyzeSignals(indicators, currentPrice) {
+    const signals = {
+      buy: [],
+      sell: [],
+      score: 0,
+      confidence: 0
+    };
+
+    let buyScore = 0;
+    let sellScore = 0;
+
+    // RSI Analysis
+    if (indicators.rsi) {
+      if (indicators.rsi < CONFIG.INDICATORS.RSI.oversold) {
+        buyScore += 1;
+        signals.buy.push('RSI Oversold');
+      } else if (indicators.rsi > CONFIG.INDICATORS.RSI.overbought) {
+        sellScore += 1;
+        signals.sell.push('RSI Overbought');
+      }
+    }
+
+    // MACD Analysis
+    if (indicators.macd) {
+      if (indicators.macd.histogram > 0 && indicators.macd.macd > indicators.macd.signal) {
+        buyScore += 1;
+        signals.buy.push('MACD Bullish');
+      } else if (indicators.macd.histogram < 0 && indicators.macd.macd < indicators.macd.signal) {
+        sellScore += 1;
+        signals.sell.push('MACD Bearish');
+      }
+    }
+
+    // Bollinger Bands Analysis
+    if (indicators.bb) {
+      if (currentPrice < indicators.bb.lower) {
+        buyScore += 1;
+        signals.buy.push('Price Below BB Lower');
+      } else if (currentPrice > indicators.bb.upper) {
+        sellScore += 1;
+        signals.sell.push('Price Above BB Upper');
+      }
+    }
+
+    // EMA Crossover Analysis
+    if (indicators.ema) {
+      if (indicators.ema.fast > indicators.ema.medium && indicators.ema.medium > indicators.ema.slow) {
+        buyScore += 2;
+        signals.buy.push('EMA Golden Cross');
+      } else if (indicators.ema.fast < indicators.ema.medium && indicators.ema.medium < indicators.ema.slow) {
+        sellScore += 2;
+        signals.sell.push('EMA Death Cross');
+      }
+    }
+
+    // SMA 200 Trend
+    if (indicators.sma200) {
+      if (currentPrice > indicators.sma200) {
+        buyScore += 1;
+        signals.buy.push('Above SMA 200 (Uptrend)');
+      } else {
+        sellScore += 1;
+        signals.sell.push('Below SMA 200 (Downtrend)');
+      }
+    }
+
+    // ADX Trend Strength
+    if (indicators.adx && indicators.adx > CONFIG.INDICATORS.ADX.threshold) {
+      if (buyScore > sellScore) {
+        buyScore += 1;
+        signals.buy.push('Strong Trend (ADX)');
+      } else if (sellScore > buyScore) {
+        sellScore += 1;
+        signals.sell.push('Strong Trend (ADX)');
+      }
+    }
+
+    // Stochastic
+    if (indicators.stoch) {
+      if (indicators.stoch.k < CONFIG.INDICATORS.STOCH.oversold) {
+        buyScore += 1;
+        signals.buy.push('Stochastic Oversold');
+      } else if (indicators.stoch.k > CONFIG.INDICATORS.STOCH.overbought) {
+        sellScore += 1;
+        signals.sell.push('Stochastic Overbought');
+      }
+    }
+
+    // CCI
+    if (indicators.cci) {
+      if (indicators.cci < CONFIG.INDICATORS.CCI.oversold) {
+        buyScore += 1;
+        signals.buy.push('CCI Oversold');
+      } else if (indicators.cci > CONFIG.INDICATORS.CCI.overbought) {
+        sellScore += 1;
+        signals.sell.push('CCI Overbought');
+      }
+    }
+
+    // Williams %R
+    if (indicators.williamsR) {
+      if (indicators.williamsR < CONFIG.INDICATORS.WILLIAMS_R.oversold) {
+        buyScore += 1;
+        signals.buy.push('Williams %R Oversold');
+      } else if (indicators.williamsR > CONFIG.INDICATORS.WILLIAMS_R.overbought) {
+        sellScore += 1;
+        signals.sell.push('Williams %R Overbought');
+      }
+    }
+
+    // MFI
+    if (indicators.mfi) {
+      if (indicators.mfi < CONFIG.INDICATORS.MFI.oversold) {
+        buyScore += 1;
+        signals.buy.push('MFI Oversold');
+      } else if (indicators.mfi > CONFIG.INDICATORS.MFI.overbought) {
+        sellScore += 1;
+        signals.sell.push('MFI Overbought');
+      }
+    }
+
+    // OBV Volume Confirmation
+    if (indicators.obv && indicators.obvPrev) {
+      if (indicators.obv > indicators.obvPrev && buyScore > sellScore) {
+        buyScore += 1;
+        signals.buy.push('Volume Increasing (OBV)');
+      } else if (indicators.obv < indicators.obvPrev && sellScore > buyScore) {
+        sellScore += 1;
+        signals.sell.push('Volume Increasing (OBV)');
+      }
+    }
+
+    // Determine final signal
+    if (buyScore > sellScore) {
+      signals.score = buyScore;
+      signals.confidence = Math.min(95, (buyScore / 15) * 100);
+      signals.direction = 'BUY';
+    } else if (sellScore > buyScore) {
+      signals.score = sellScore;
+      signals.confidence = Math.min(95, (sellScore / 15) * 100);
+      signals.direction = 'SELL';
+    } else {
+      signals.direction = 'NEUTRAL';
+      signals.score = 0;
+      signals.confidence = 0;
+    }
+
+    return signals;
+  }
+}
+
+// ==================== MAIN BOT CLASS ====================
+class TradingBot {
+  constructor() {
+    this.api = new MetaApi(CONFIG.META_API_TOKEN);
+    this.account = null;
+    this.connection = null;
+    this.telegram = new TelegramNotifier();
+    this.technicalAnalysis = new TechnicalAnalysis();
+    this.isRunning = false;
+    this.openPositions = new Map();
+    this.dailyStats = {
+      trades: 0,
+      winners: 0,
+      losers: 0,
+      profit: 0,
+      startBalance: 0
+    };
+  }
+
+  async initialize() {
+    try {
+      logger.info('🚀 Initializing Advanced Trading Bot...');
+
+      // Get account
+      this.account = await this.api.metatraderAccountApi.getAccount(CONFIG.ACCOUNT_ID);
+      logger.info(`✓ Account loaded: ${this.account.name} (${this.account.server})`);
+
+      // CHECK DEPLOYMENT STATUS - DON'T TRY TO DEPLOY
+      if (this.account.state !== 'DEPLOYED') {
+        logger.error(`❌ Account is not deployed (current state: ${this.account.state})`);
+        logger.error('→ Please deploy your account manually:');
+        logger.error('   1. Go to https://app.metaapi.cloud/');
+        logger.error('   2. Find your account in the dashboard');
+        logger.error('   3. Click "Deploy" button');
+        logger.error('   4. Wait 1-2 minutes for deployment to complete');
+        logger.error('   5. Then restart this bot');
+        
+        await this.telegram.sendAlert(
+          '⚠️ Bot Initialization Failed',
+          `Account is not deployed.\n\nCurrent state: ${this.account.state}\n\nPlease deploy manually at:\nhttps://app.metaapi.cloud/`
+        );
+        
+        throw new Error('Account not deployed. Manual deployment required.');
+      }
+
+      logger.info('✓ Account is deployed');
+
+      // Wait for connection with timeout
+      logger.info('Connecting to account...');
+      try {
+        await this.account.waitConnected({ timeoutInSeconds: 60 });
+        logger.info('✓ Account connected');
+      } catch (error) {
+        logger.warn('⚠️  Initial connection timeout - will retry');
+      }
+
+      // Get RPC connection
+      this.connection = this.account.getRPCConnection();
+      await this.connection.connect();
+      logger.info('✓ RPC connection established');
+
+      // Wait for synchronization with timeout (optional - will continue if timeout)
+      logger.info('Synchronizing account data...');
+      try {
+        await this.connection.waitSynchronized({
+          timeoutInSeconds: 30,
+          intervalInMilliseconds: 1000
+        });
+        logger.info('✓ Account synchronized');
+      } catch (error) {
+        logger.warn('⚠️  Initial synchronization timeout - will sync in background');
+        // Don't throw - allow bot to continue
+      }
+
+      // Get account information
+      const accountInfo = await this.connection.getAccountInformation();
+      this.dailyStats.startBalance = accountInfo.balance;
+      
+      logger.info('✓ Account information retrieved:');
+      logger.info(`   Balance: $${accountInfo.balance.toFixed(2)}`);
+      logger.info(`   Equity: $${accountInfo.equity.toFixed(2)}`);
+      logger.info(`   Leverage: 1:${accountInfo.leverage}`);
+      logger.info(`   Currency: ${accountInfo.currency}`);
+
+      // Send startup notification
+      await this.telegram.send(`
+🤖 <b>Trading Bot Started Successfully</b>
+
+💼 Account: ${this.account.name}
+💰 Balance: $${accountInfo.balance.toFixed(2)}
+📊 Leverage: 1:${accountInfo.leverage}
+🎯 Symbol: ${CONFIG.SYMBOL}
+⏱️ Timeframe: ${CONFIG.TIMEFRAME}
+
+<b>Risk Settings:</b>
+• Risk per trade: ${CONFIG.RISK_PERCENT}%
+• Max daily loss: ${CONFIG.MAX_DAILY_LOSS}%
+• Stop loss: ${CONFIG.STOP_LOSS_PIPS} pips
+• Take profit ratio: 1:${CONFIG.TAKE_PROFIT_RATIO}
+
+✅ Bot is now monitoring the market...
+      `);
+
+      logger.info('✅ Initialization complete!');
+      return true;
+
+    } catch (error) {
+      logger.error(`❌ Initialization failed: ${error.message}`);
+      
+      try {
+        await this.telegram.sendAlert(
+          '❌ Bot Initialization Failed',
+          `Error: ${error.message}\n\nPlease check logs and configuration.`
+        );
+      } catch (telegramError) {
+        logger.error(`Failed to send Telegram notification: ${telegramError.message}`);
+      }
+      
+      throw error;
+    }
+  }
+
+  async calculateLotSize(accountInfo, stopLossPips) {
+    const riskAmount = accountInfo.balance * (CONFIG.RISK_PERCENT / 100);
+    const pipValue = 10; // Standard for forex mini lot
+    const lotSize = (riskAmount / (stopLossPips * pipValue)).toFixed(2);
+    return Math.max(0.01, Math.min(parseFloat(lotSize), 10)); // Min 0.01, Max 10
+  }
+
+  async checkDailyLoss(accountInfo) {
+    const dailyLoss = ((this.dailyStats.startBalance - accountInfo.balance) / this.dailyStats.startBalance) * 100;
+    if (dailyLoss >= CONFIG.MAX_DAILY_LOSS) {
+      logger.warn(`⚠️  Daily loss limit reached: ${dailyLoss.toFixed(2)}%`);
+      await this.telegram.sendAlert(
+        '🛑 Daily Loss Limit Reached',
+        `Trading stopped for today.\nLoss: ${dailyLoss.toFixed(2)}%\nStarting Balance: $${this.dailyStats.startBalance.toFixed(2)}\nCurrent Balance: $${accountInfo.balance.toFixed(2)}`
+      );
+      return true;
+    }
+    return false;
+  }
+
+  async executeTrade(signal, currentPrice, accountInfo) {
+    try {
+      // Check if we can open new trades
+      if (this.openPositions.size >= CONFIG.MAX_OPEN_TRADES) {
+        logger.info('Max open trades reached - skipping');
+        return;
+      }
+
+      // Calculate position parameters
+      const lotSize = await this.calculateLotSize(accountInfo, CONFIG.STOP_LOSS_PIPS);
+      const pipSize = 0.0001; // For EURUSD
+      
+      let stopLoss, takeProfit;
+      if (signal.direction === 'BUY') {
+        stopLoss = currentPrice - (CONFIG.STOP_LOSS_PIPS * pipSize);
+        takeProfit = currentPrice + (CONFIG.STOP_LOSS_PIPS * CONFIG.TAKE_PROFIT_RATIO * pipSize);
+      } else {
+        stopLoss = currentPrice + (CONFIG.STOP_LOSS_PIPS * pipSize);
+        takeProfit = currentPrice - (CONFIG.STOP_LOSS_PIPS * CONFIG.TAKE_PROFIT_RATIO * pipSize);
+      }
+
+      // Execute trade
+      logger.info(`📊 Executing ${signal.direction} trade...`);
+      const result = await this.connection.createMarketOrder(
+        CONFIG.SYMBOL,
+        signal.direction === 'BUY' ? 'ORDER_TYPE_BUY' : 'ORDER_TYPE_SELL',
+        lotSize,
+        stopLoss,
+        takeProfit,
+        {
+          comment: `Bot_${signal.direction}_${Date.now()}`
+        }
+      );
+
+      logger.info(`✅ Trade executed: ${result.orderId}`);
+      
+      // Store position
+      this.openPositions.set(result.positionId, {
+        id: result.positionId,
+        type: signal.direction,
+        entry: currentPrice,
+        stopLoss,
+        takeProfit,
+        lotSize,
+        openTime: new Date()
+      });
+
+      // Update stats
+      this.dailyStats.trades++;
+
+      // Send notification
+      const riskAmount = accountInfo.balance * (CONFIG.RISK_PERCENT / 100);
+      await this.telegram.sendTrade(signal.direction, {
+        symbol: CONFIG.SYMBOL,
+        entry: currentPrice.toFixed(5),
+        stopLoss: stopLoss.toFixed(5),
+        takeProfit: takeProfit.toFixed(5),
+        lotSize,
+        riskAmount,
+        confidence: signal.confidence,
+        score: signal.score,
+        signals: signal.direction === 'BUY' ? signal.buy : signal.sell
+      });
+
+    } catch (error) {
+      logger.error(`Failed to execute trade: ${error.message}`);
+      await this.telegram.sendAlert('❌ Trade Execution Failed', error.message);
+    }
+  }
+
+  async monitorPositions() {
+    try {
+      const positions = await this.connection.getPositions();
+      const accountInfo = await this.connection.getAccountInformation();
+
+      for (const position of positions) {
+        if (!this.openPositions.has(position.id)) {
+          continue;
+        }
+
+        const storedPosition = this.openPositions.get(position.id);
+        const profit = position.profit || 0;
+
+        // Check if position was closed
+        if (!position || position.state === 'CLOSED') {
+          logger.info(`Position ${position.id} closed. Profit: ${profit.toFixed(2)}`);
+          
+          // Update stats
+          if (profit > 0) {
+            this.dailyStats.winners++;
+          } else {
+            this.dailyStats.losers++;
+          }
+          this.dailyStats.profit += profit;
+
+          // Remove from tracking
+          this.openPositions.delete(position.id);
+
+          // Send notification
+          await this.telegram.sendPositionUpdate(storedPosition, profit);
+        }
+
+        // Implement trailing stop
+        if (CONFIG.TRAILING_STOP && position.state === 'OPEN') {
+          const currentPrice = position.currentPrice;
+          const priceDiff = storedPosition.type === 'BUY' ? 
+            currentPrice - storedPosition.entry : 
+            storedPosition.entry - currentPrice;
+          
+          const pipSize = 0.0001;
+          const profitPips = priceDiff / pipSize;
+
+          if (profitPips >= CONFIG.TRAILING_STOP_PIPS) {
+            let newStopLoss;
+            if (storedPosition.type === 'BUY') {
+              newStopLoss = currentPrice - (CONFIG.TRAILING_STOP_PIPS * pipSize);
+              if (newStopLoss > storedPosition.stopLoss) {
+                await this.connection.modifyPosition(position.id, newStopLoss, storedPosition.takeProfit);
+                storedPosition.stopLoss = newStopLoss;
+                logger.info(`Trailing stop updated for ${position.id}: ${newStopLoss.toFixed(5)}`);
+              }
+            } else {
+              newStopLoss = currentPrice + (CONFIG.TRAILING_STOP_PIPS * pipSize);
+              if (newStopLoss < storedPosition.stopLoss) {
+                await this.connection.modifyPosition(position.id, newStopLoss, storedPosition.takeProfit);
+                storedPosition.stopLoss = newStopLoss;
+                logger.info(`Trailing stop updated for ${position.id}: ${newStopLoss.toFixed(5)}`);
+              }
+            }
+          }
+        }
+      }
+
+    } catch (error) {
+      logger.error(`Error monitoring positions: ${error.message}`);
+    }
+  }
+
+  async analyzeMark() {
+    try {
+      // Wait a moment for terminal state if not yet available
+      if (!this.connection.terminalState) {
+        logger.debug('Waiting for terminal state to sync...');
+        await new Promise(resolve => setTimeout(resolve, 5000));
+        
+        if (!this.connection.terminalState) {
+          logger.warn('Terminal state still not available - skipping this cycle');
+          return;
+        }
+      }
+
+      // Get price data
+      const price = this.connection.terminalState.price(CONFIG.SYMBOL);
+      
+      if (!price) {
+        logger.warn(`No price data available for ${CONFIG.SYMBOL} yet`);
+        return;
+      }
+
+      // Get candles from history
+      let candles;
+      try {
+        candles = await this.account.getHistoricalCandles(CONFIG.SYMBOL, CONFIG.TIMEFRAME, null, CONFIG.CANDLE_LOOKBACK);
+      } catch (error) {
+        logger.warn(`Failed to fetch candles: ${error.message} - will retry next cycle`);
+        return;
+      }
+      
+      if (!candles || candles.length < 100) {
+        logger.warn(`Insufficient candle data: ${candles ? candles.length : 0} candles - need at least 100`);
+        return;
+      }
+
+      logger.info(`✓ Fetched ${candles.length} candles for analysis`);
+
+      // Calculate indicators
+      const indicators = this.technicalAnalysis.calculateIndicators(candles);
+      const currentPrice = price.bid;
+
+      // Analyze signals
+      const signals = this.technicalAnalysis.analyzeSignals(indicators, currentPrice);
+
+      logger.info(`📊 Analysis: ${signals.direction} | Score: ${signals.score}/15 | Confidence: ${signals.confidence.toFixed(1)}%`);
+
+      // Check if signal meets thresholds
+      if (signals.score >= CONFIG.MIN_SIGNAL_SCORE && signals.confidence >= CONFIG.MIN_CONFIDENCE) {
+        logger.info(`🎯 Strong signal detected! Preparing to trade...`);
+        
+        const accountInfo = await this.connection.getAccountInformation();
+
+        // Check daily loss limit
+        if (await this.checkDailyLoss(accountInfo)) {
+          this.isRunning = false;
+          return;
+        }
+
+        // Execute trade
+        await this.executeTrade(signals, currentPrice, accountInfo);
+      } else {
+        logger.debug(`Signal too weak (Score: ${signals.score}, Min: ${CONFIG.MIN_SIGNAL_SCORE})`);
+      }
+
+    } catch (error) {
+      logger.error(`Error analyzing market: ${error.message}`);
+      // Don't stop the bot on analysis errors
+    }
+  }
+
+  async start() {
+    this.isRunning = true;
+    logger.info('🤖 Trading bot started - monitoring market...');
+    logger.info(`⏱️  Analysis interval: 15 minutes`);
+    logger.info(`📊 Symbol: ${CONFIG.SYMBOL} | Timeframe: ${CONFIG.TIMEFRAME}`);
+
+    // Main trading loop
+    while (this.isRunning) {
+      try {
+        // Monitor existing positions
+        await this.monitorPositions();
+
+        // Analyze market for new signals
+        await this.analyzeMark();
+
+        // Wait before next iteration (15 minutes for 15m timeframe)
+        logger.info(`⏳ Waiting 15 minutes until next analysis...`);
+        await new Promise(resolve => setTimeout(resolve, 15 * 60 * 1000));
+
+      } catch (error) {
+        logger.error(`Error in main loop: ${error.message}`);
+        await this.telegram.sendAlert('⚠️ Bot Error', error.message);
+        
+        // Wait before retry (1 minute)
+        logger.info('⏳ Waiting 1 minute before retry...');
+        await new Promise(resolve => setTimeout(resolve, 60 * 1000));
+      }
+    }
+
+    logger.info('🛑 Trading bot stopped');
+  }
+
+  async stop() {
+    this.isRunning = false;
+    
+    // Send daily summary
+    const accountInfo = await this.connection.getAccountInformation();
+    const winRate = this.dailyStats.trades > 0 ? 
+      ((this.dailyStats.winners / this.dailyStats.trades) * 100).toFixed(1) : 0;
+
+    await this.telegram.sendDailySummary({
+      totalTrades: this.dailyStats.trades,
+      winners: this.dailyStats.winners,
+      losers: this.dailyStats.losers,
+      winRate,
+      netPL: this.dailyStats.profit,
+      balance: accountInfo.balance
+    });
+    
+    if (this.connection) {
+      await this.connection.close();
+    }
+  }
+}
+
+// ==================== MAIN ENTRY POINT ====================
+async function main() {
+  const bot = new TradingBot();
+
+  try {
+    // Initialize bot
+    await bot.initialize();
+
+    // Start trading
+    await bot.start();
+
+  } catch (error) {
+    logger.error('❌ Failed to initialize bot - exiting');
+    process.exit(1);
+  }
+}
+
+// Handle graceful shutdown
+process.on('SIGINT', async () => {
+  logger.info('⚠️  Received SIGINT - shutting down gracefully...');
+  process.exit(0);
+});
+
+process.on('SIGTERM', async () => {
+  logger.info('⚠️  Received SIGTERM - shutting down gracefully...');
+  process.exit(0);
+});
+
+// Start the bot
+main();

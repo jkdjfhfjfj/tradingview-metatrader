@@ -1,0 +1,233 @@
+╔══════════════════════════════════════════════════════════════════════════════╗
+║          VPS SETUP GUIDE — Ubuntu (IP: 54.204.233.214)                     ║
+║          TradingView → MetaTrader CLI Bot                                  ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+
+This guide covers everything from a fresh Ubuntu 20.04/22.04 VPS to a fully
+running bot on port 80.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+STEP 1 — CONNECT TO YOUR VPS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  ssh root@54.204.233.214
+  # or if using a key:
+  ssh -i ~/.ssh/your_key.pem ubuntu@54.204.233.214
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+STEP 2 — UPDATE SYSTEM & INSTALL NODE.JS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  apt update && apt upgrade -y
+  apt install -y curl git unzip nano
+
+  # Install Node.js 20 (LTS)
+  curl -fsSL https://deb.nodesource.com/setup_20.x | bash -
+  apt install -y nodejs
+
+  # Verify
+  node -v    # should show v20.x.x
+  npm -v
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+STEP 3 — ALLOW PORT 80 (TradingView requires 80 or 443)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  # Option A: Use ufw firewall
+  ufw allow 22
+  ufw allow 80
+  ufw allow 443
+  ufw enable
+  ufw status
+
+  # Option B: Allow Node.js to bind port 80 directly WITHOUT sudo:
+  apt install -y libcap2-bin
+  which node        # get node path, e.g. /usr/bin/node
+  setcap 'cap_net_bind_service=+ep' /usr/bin/node
+
+  # After setcap, run bot.js as a regular user on port 80.
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+STEP 4 — UPLOAD & EXTRACT THE PROJECT
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  # On your LOCAL machine — upload the zip:
+  scp trading-bot.zip root@54.204.233.214:/root/
+
+  # Back on the VPS:
+  cd /root
+  unzip trading-bot.zip
+  cd trading-bot
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+STEP 5 — CONFIGURE YOUR .env
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  nano .env
+
+  # Fill in:
+  META_API_TOKEN=get_from_metaapi.cloud_dashboard
+  META_ACCOUNT_ID=your_mt4_mt5_account_id
+  GROQ_API_KEY=get_from_console.groq.com      ← optional but recommended
+  LOT_SIZE=0.01
+  BOT_ENABLED=true
+  PORT=80
+  WEBHOOK_SECRET=choose_a_strong_secret_here  ← set the same in TradingView
+
+  # Save: Ctrl+O, Enter, Ctrl+X
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+STEP 6 — WHERE TO GET YOUR CREDENTIALS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  MetaAPI Token:
+    1. Go to https://app.metaapi.cloud
+    2. Create a free account
+    3. Dashboard → API Access → copy your token
+    4. Connect your MT4/MT5 account → copy Account ID
+
+  Groq API Key (free):
+    1. Go to https://console.groq.com
+    2. Create account → API Keys → Create key
+    3. Paste in GROQ_API_KEY
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+STEP 7 — INSTALL PM2 (keeps bot running 24/7)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  npm install -g pm2
+
+  # Start the bot
+  pm2 start bot.js --name trading-bot
+
+  # Auto-restart on server reboot
+  pm2 startup
+  # (copy & run the command PM2 prints)
+  pm2 save
+
+  # Useful PM2 commands:
+  pm2 logs trading-bot        # tail live logs
+  pm2 status                  # see if it's running
+  pm2 restart trading-bot     # restart
+  pm2 stop trading-bot        # stop
+  pm2 delete trading-bot      # remove
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+STEP 8 — RUN INTERACTIVELY (CLI mode with live prompts)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  # Attach to PM2 process (you'll see the bot> prompt):
+  pm2 attach trading-bot
+
+  # OR run directly (Ctrl+C to stop):
+  node bot.js
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+STEP 9 — CONFIGURE TRADINGVIEW WEBHOOK
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  In TradingView → Alerts → Create Alert:
+
+  Webhook URL:   http://54.204.233.214/webhook
+
+  Message body (JSON):
+  {
+    "action": "buy",
+    "symbol": "{{ticker}}",
+    "sl": "{{plot_0}}",
+    "tp": "{{plot_1}}",
+    "lot": 0.01,
+    "time": "{{time}}",
+    "secret": "your_webhook_secret"
+  }
+
+  ► Change "action" to "sell" for sell signals
+  ► {{ticker}} auto-fills the symbol
+  ► {{time}} auto-fills the signal time (bot converts to EAT)
+  ► {{plot_0}} / {{plot_1}} are your indicator SL/TP — or hardcode numbers
+
+  Test via curl on your VPS:
+  curl -X POST http://localhost/webhook \
+    -H "Content-Type: application/json" \
+    -d '{"action":"buy","symbol":"EURUSD","lot":0.01,"secret":"your_secret"}'
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+STEP 10 — CLI COMMANDS (once bot is running)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  bot> status            → current open trade + stats
+  bot> history 20        → last 20 trades with AI notes
+  bot> sync              → pull latest SL/TP/PnL from MetaTrader
+  bot> close             → manually close open trade
+  bot> enable / disable  → toggle bot on/off without restarting
+  bot> test-buy EURUSD   → simulate a buy signal (no real trade)
+  bot> update 1.08 1.12  → update SL/TP on open trade
+  bot> config            → view current config
+  bot> help              → all commands
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+STEP 11 — TRADES.JSON STRUCTURE (auto-created)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  {
+    "trades": [
+      {
+        "id": "T1710000000000-AB12",
+        "positionId": "12345",
+        "symbol": "EURUSD",
+        "direction": "buy",
+        "entry": 1.0950,
+        "sl": 1.0900,
+        "tp": 1.1050,
+        "lot": 0.01,
+        "status": "closed",
+        "pnl": 23.50,
+        "closePrice": 1.1050,
+        "closeReason": "closed by opposite SELL signal",
+        "aiSummary": "The buy on EURUSD hit the take profit...",
+        "openTimeEAT": "2024-03-10 11:23:45 EAT",
+        "closeTimeEAT": "2024-03-10 14:05:10 EAT",
+        "updatedAt": "2024-03-10 14:05:10 EAT"
+      }
+    ],
+    "stats": {
+      "total": 14,
+      "wins": 9,
+      "losses": 5,
+      "totalPnl": 342.10
+    }
+  }
+
+  View trades anytime:  cat /root/trading-bot/trades.json
+
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+TROUBLESHOOTING
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  Port 80 permission denied:
+    → setcap 'cap_net_bind_service=+ep' $(which node)
+    → OR run: sudo node bot.js
+
+  TradingView can't reach webhook:
+    → Check VPS security group / AWS inbound rules allow port 80
+    → Test: curl http://54.204.233.214/
+
+  MetaTrader errors:
+    → Verify META_API_TOKEN and META_ACCOUNT_ID in .env
+    → Ensure your MT account is connected in metaapi.cloud dashboard
+    → Check bot.log: tail -f /root/trading-bot/bot.log
+
+  Check live logs:
+    pm2 logs trading-bot --lines 50
+    tail -f /root/trading-bot/bot.log

@@ -1,0 +1,41 @@
+# TradingView Alert Webhook Payloads
+# Webhook URL: http://54.204.233.214/webhook
+
+# ─── BUY Signal ──────────────────────────────────────────────────────────────
+# Paste this JSON into TradingView Alert → Webhook Message:
+{
+  "action": "buy",
+  "symbol": "{{ticker}}",
+  "sl": "{{plot_0}}",
+  "tp": "{{plot_1}}",
+  "lot": 0.01,
+  "time": "{{time}}",
+  "secret": "your_webhook_secret"
+}
+
+# ─── SELL Signal ─────────────────────────────────────────────────────────────
+{
+  "action": "sell",
+  "symbol": "{{ticker}}",
+  "sl": "{{plot_0}}",
+  "tp": "{{plot_1}}",
+  "lot": 0.01,
+  "time": "{{time}}",
+  "secret": "your_webhook_secret"
+}
+
+# ─── Close Signal ─────────────────────────────────────────────────────────────
+{
+  "action": "close",
+  "symbol": "{{ticker}}",
+  "time": "{{time}}",
+  "secret": "your_webhook_secret"
+}
+
+# ─── Update SL/TP ─────────────────────────────────────────────────────────────
+{
+  "action": "update",
+  "sl": 1.0850,
+  "tp": 1.1050,
+  "secret": "your_webhook_secret"
+}

@@ -1,0 +1,13 @@
+{
+  "name": "tv-mt-trading-bot",
+  "version": "1.0.0",
+  "description": "TradingView → MetaTrader CLI Trading Bot with EAT timezone, JSON storage, Groq AI summaries",
+  "main": "bot.js",
+  "scripts": {
+    "start": "node bot.js",
+    "dev": "node bot.js"
+  },
+  "keywords": ["trading", "metatrader", "tradingview", "forex", "bot"],
+  "license": "MIT",
+  "dependencies": {}
+}
