@@ -624,3 +624,581 @@
 [2026-03-02 16:06:00] [OK] Flip: SELL closed ✔  Opening BUY...
 [2026-03-02 16:06:01] [OK] Order confirmed! positionId:686628104
 [2026-03-02 16:06:01] [BUY] BUY OPENED GOLD | Entry:5407.32 | SL:1 | TP:0 | Lot:0.01
+[2026-03-02 16:45:00] [INFO] Payload: {"action":"sell","symbol":"GOLD","sl":"0","tp":"0","lot":0.01,"price":5393.008,"time":"2026-03-02T13:42:00Z","secret":"your_webhook_secret"}
+[2026-03-02 16:45:00] [INFO] Signal: SELL GOLD | Lot:0.01 | SL:0 | TP:0
+[2026-03-02 16:45:00] [TRADE] FLIP: closing BUY → opening SELL
+[2026-03-02 16:45:00] [TRADE] Closing BUY GOLD | Reason: flipped to SELL
+[2026-03-02 16:45:00] [OK] MT closed. Price:N/A PnL:N/A
+[2026-03-02 16:45:00] [INFO] Getting AI summary...
+[2026-03-02 16:45:00] [PNL] Final PnL: N/A
+[2026-03-02 16:45:00] [OK] Flip: BUY closed ✔  Opening SELL...
+[2026-03-02 16:45:00] [OK] Order confirmed! positionId:686706656
+[2026-03-02 16:45:01] [SELL] SELL OPENED GOLD | Entry:5393.29 | SL:0 | TP:0 | Lot:0.01
+[2026-03-02 17:16:06] [WARN] Position 686706656 not found on MT — may be closed externally.
+[2026-03-02 17:16:06] [WARN] Use "close" to mark it closed in DB.
+[2026-03-02 17:16:12] [TRADE] Closing SELL GOLD | Reason: CLI manual close
+[2026-03-02 17:16:13] [OK] MT closed. Price:N/A PnL:N/A
+[2026-03-02 17:16:13] [INFO] Getting AI summary...
+[2026-03-02 17:16:13] [PNL] Final PnL: N/A
+[2026-03-02 18:33:00] [INFO] Payload: {"action":"buy","symbol":"GOLD","sl":"1","tp":"0","lot":0.01,"price":5344.79,"time":"2026-03-02T15:30:00Z","secret":"your_webhook_secret"}
+[2026-03-02 18:33:00] [INFO] Signal: BUY GOLD | Lot:0.01 | SL:1 | TP:0
+[2026-03-02 18:33:01] [OK] Order confirmed! positionId:686985056
+[2026-03-02 18:33:01] [BUY] BUY OPENED GOLD | Entry:5344.73 | SL:1 | TP:0 | Lot:0.01
+[2026-03-02 18:57:00] [INFO] Payload: {"action":"sell","symbol":"GOLD","sl":"0","tp":"1","lot":0.01,"price":5322.475,"time":"2026-03-02T15:54:00Z","secret":"your_webhook_secret"}
+[2026-03-02 18:57:00] [INFO] Signal: SELL GOLD | Lot:0.01 | SL:0 | TP:1
+[2026-03-02 18:57:00] [TRADE] FLIP: closing BUY → opening SELL
+[2026-03-02 18:57:00] [TRADE] Closing BUY GOLD | Reason: flipped to SELL
+[2026-03-02 18:57:00] [OK] MT closed. Price:N/A PnL:N/A
+[2026-03-02 18:57:00] [INFO] Getting AI summary...
+[2026-03-02 18:57:00] [PNL] Final PnL: N/A
+[2026-03-02 18:57:00] [OK] Flip: BUY closed ✔  Opening SELL...
+[2026-03-02 18:57:01] [OK] Order confirmed! positionId:687030970
+[2026-03-02 18:57:01] [SELL] SELL OPENED GOLD | Entry:5322.54 | SL:0 | TP:1 | Lot:0.01
+[2026-03-02 20:27:00] [INFO] Payload: {"action":"buy","symbol":"GOLD","sl":"1","tp":"0","lot":0.01,"price":5308.97,"time":"2026-03-02T17:24:00Z","secret":"your_webhook_secret"}
+[2026-03-02 20:27:00] [INFO] Signal: BUY GOLD | Lot:0.01 | SL:1 | TP:0
+[2026-03-02 20:27:00] [TRADE] FLIP: closing SELL → opening BUY
+[2026-03-02 20:27:00] [TRADE] Closing SELL GOLD | Reason: flipped to BUY
+[2026-03-02 20:27:01] [OK] MT closed. Price:N/A PnL:N/A
+[2026-03-02 20:27:01] [INFO] Getting AI summary...
+[2026-03-02 20:27:01] [PNL] Final PnL: N/A
+[2026-03-02 20:27:01] [OK] Flip: SELL closed ✔  Opening BUY...
+[2026-03-02 20:27:01] [OK] Order confirmed! positionId:687202714
+[2026-03-02 20:27:02] [BUY] BUY OPENED GOLD | Entry:5309.47 | SL:1 | TP:0 | Lot:0.01
+[2026-03-02 21:03:00] [INFO] Payload: {"action":"sell","symbol":"GOLD","sl":"0","tp":"1","lot":0.01,"price":5299.48,"time":"2026-03-02T18:00:00Z","secret":"your_webhook_secret"}
+[2026-03-02 21:03:00] [INFO] Signal: SELL GOLD | Lot:0.01 | SL:0 | TP:1
+[2026-03-02 21:03:00] [TRADE] FLIP: closing BUY → opening SELL
+[2026-03-02 21:03:00] [TRADE] Closing BUY GOLD | Reason: flipped to SELL
+[2026-03-02 21:03:01] [OK] MT closed. Price:N/A PnL:N/A
+[2026-03-02 21:03:01] [INFO] Getting AI summary...
+[2026-03-02 21:03:01] [PNL] Final PnL: N/A
+[2026-03-02 21:03:01] [OK] Flip: BUY closed ✔  Opening SELL...
+[2026-03-02 21:03:01] [OK] Order confirmed! positionId:687246185
+[2026-03-02 21:03:01] [SELL] SELL OPENED GOLD | Entry:5299.85 | SL:0 | TP:1 | Lot:0.01
+[2026-03-02 21:21:00] [INFO] Payload: {"action":"buy","symbol":"GOLD","sl":"1","tp":"0","lot":0.01,"price":5304.98,"time":"2026-03-02T18:18:00Z","secret":"your_webhook_secret"}
+[2026-03-02 21:21:00] [INFO] Signal: BUY GOLD | Lot:0.01 | SL:1 | TP:0
+[2026-03-02 21:21:00] [TRADE] FLIP: closing SELL → opening BUY
+[2026-03-02 21:21:00] [TRADE] Closing SELL GOLD | Reason: flipped to BUY
+[2026-03-02 21:21:00] [OK] MT closed. Price:N/A PnL:N/A
+[2026-03-02 21:21:00] [INFO] Getting AI summary...
+[2026-03-02 21:21:00] [PNL] Final PnL: N/A
+[2026-03-02 21:21:00] [OK] Flip: SELL closed ✔  Opening BUY...
+[2026-03-02 21:21:01] [OK] Order confirmed! positionId:687266687
+[2026-03-02 21:21:01] [BUY] BUY OPENED GOLD | Entry:5305.73 | SL:1 | TP:0 | Lot:0.01
+[2026-03-02 21:27:00] [INFO] Payload: {"action":"sell","symbol":"GOLD","sl":"0","tp":"1","lot":0.01,"price":5294.043,"time":"2026-03-02T18:24:00Z","secret":"your_webhook_secret"}
+[2026-03-02 21:27:00] [INFO] Signal: SELL GOLD | Lot:0.01 | SL:0 | TP:1
+[2026-03-02 21:27:00] [TRADE] FLIP: closing BUY → opening SELL
+[2026-03-02 21:27:00] [TRADE] Closing BUY GOLD | Reason: flipped to SELL
+[2026-03-02 21:27:00] [OK] MT closed. Price:N/A PnL:N/A
+[2026-03-02 21:27:00] [INFO] Getting AI summary...
+[2026-03-02 21:27:00] [PNL] Final PnL: N/A
+[2026-03-02 21:27:00] [OK] Flip: BUY closed ✔  Opening SELL...
+[2026-03-02 21:27:00] [OK] Order confirmed! positionId:687272341
+[2026-03-02 21:27:00] [SELL] SELL OPENED GOLD | Entry:5294.22 | SL:0 | TP:1 | Lot:0.01
+[2026-03-02 21:48:00] [INFO] Payload: {"action":"buy","symbol":"GOLD","sl":"1","tp":"0","lot":0.01,"price":5309.079,"time":"2026-03-02T18:45:00Z","secret":"your_webhook_secret"}
+[2026-03-02 21:48:00] [INFO] Signal: BUY GOLD | Lot:0.01 | SL:1 | TP:0
+[2026-03-02 21:48:00] [TRADE] FLIP: closing SELL → opening BUY
+[2026-03-02 21:48:00] [TRADE] Closing SELL GOLD | Reason: flipped to BUY
+[2026-03-02 21:48:00] [OK] MT closed. Price:N/A PnL:N/A
+[2026-03-02 21:48:00] [INFO] Getting AI summary...
+[2026-03-02 21:48:00] [PNL] Final PnL: N/A
+[2026-03-02 21:48:00] [OK] Flip: SELL closed ✔  Opening BUY...
+[2026-03-02 21:48:00] [OK] Order confirmed! positionId:687290178
+[2026-03-02 21:48:01] [BUY] BUY OPENED GOLD | Entry:5309.47 | SL:1 | TP:0 | Lot:0.01
+[2026-03-03 00:00:02] [INFO] Payload: {"action":"sell","symbol":"GOLD","sl":"0","tp":"0","lot":0.01,"price":5332.383,"time":"2026-03-02T20:57:00Z","secret":"your_webhook_secret"}
+[2026-03-03 00:00:02] [INFO] Signal: SELL GOLD | Lot:0.01 | SL:0 | TP:0
+[2026-03-03 00:00:02] [TRADE] FLIP: closing BUY → opening SELL
+[2026-03-03 00:00:02] [TRADE] Closing BUY GOLD | Reason: flipped to SELL
+[2026-03-03 00:00:02] [OK] MT closed. Price:N/A PnL:N/A
+[2026-03-03 00:00:02] [INFO] Getting AI summary...
+[2026-03-03 00:00:02] [PNL] Final PnL: N/A
+[2026-03-03 00:00:02] [OK] Flip: BUY closed ✔  Opening SELL...
+[2026-03-03 00:00:03] [OK] Order confirmed! positionId:687398954
+[2026-03-03 00:00:03] [SELL] SELL OPENED GOLD | Entry:5334.1 | SL:0 | TP:0 | Lot:0.01
+[2026-03-03 02:03:00] [INFO] Payload: {"action":"buy","symbol":"GOLD","sl":"1","tp":"0","lot":0.01,"price":5338.81,"time":"2026-03-02T23:00:00Z","secret":"your_webhook_secret"}
+[2026-03-03 02:03:00] [INFO] Signal: BUY GOLD | Lot:0.01 | SL:1 | TP:0
+[2026-03-03 02:03:00] [TRADE] FLIP: closing SELL → opening BUY
+[2026-03-03 02:03:00] [TRADE] Closing SELL GOLD | Reason: flipped to BUY
+[2026-03-03 02:03:00] [OK] MT closed. Price:N/A PnL:N/A
+[2026-03-03 02:03:00] [INFO] Getting AI summary...
+[2026-03-03 02:03:00] [PNL] Final PnL: N/A
+[2026-03-03 02:03:00] [OK] Flip: SELL closed ✔  Opening BUY...
+[2026-03-03 02:03:00] [OK] Order confirmed! positionId:687423204
+[2026-03-03 02:03:01] [BUY] BUY OPENED GOLD | Entry:5339.42 | SL:1 | TP:0 | Lot:0.01
+[2026-03-03 02:42:00] [INFO] Payload: {"action":"sell","symbol":"GOLD","sl":"0","tp":"0","lot":0.01,"price":5332.415,"time":"2026-03-02T23:39:00Z","secret":"your_webhook_secret"}
+[2026-03-03 02:42:00] [INFO] Signal: SELL GOLD | Lot:0.01 | SL:0 | TP:0
+[2026-03-03 02:42:00] [TRADE] FLIP: closing BUY → opening SELL
+[2026-03-03 02:42:00] [TRADE] Closing BUY GOLD | Reason: flipped to SELL
+[2026-03-03 02:42:00] [OK] MT closed. Price:N/A PnL:N/A
+[2026-03-03 02:42:00] [INFO] Getting AI summary...
+[2026-03-03 02:42:00] [PNL] Final PnL: N/A
+[2026-03-03 02:42:00] [OK] Flip: BUY closed ✔  Opening SELL...
+[2026-03-03 02:42:00] [OK] Order confirmed! positionId:687440834
+[2026-03-03 02:42:00] [SELL] SELL OPENED GOLD | Entry:5332.32 | SL:0 | TP:0 | Lot:0.01
+[2026-03-03 02:51:00] [INFO] Payload: {"action":"buy","symbol":"GOLD","sl":"1","tp":"0","lot":0.01,"price":5341.957,"time":"2026-03-02T23:48:00Z","secret":"your_webhook_secret"}
+[2026-03-03 02:51:00] [INFO] Signal: BUY GOLD | Lot:0.01 | SL:1 | TP:0
+[2026-03-03 02:51:00] [TRADE] FLIP: closing SELL → opening BUY
+[2026-03-03 02:51:00] [TRADE] Closing SELL GOLD | Reason: flipped to BUY
+[2026-03-03 02:51:00] [OK] MT closed. Price:N/A PnL:N/A
+[2026-03-03 02:51:00] [INFO] Getting AI summary...
+[2026-03-03 02:51:00] [PNL] Final PnL: N/A
+[2026-03-03 02:51:00] [OK] Flip: SELL closed ✔  Opening BUY...
+[2026-03-03 02:51:00] [OK] Order confirmed! positionId:687444528
+[2026-03-03 02:51:01] [BUY] BUY OPENED GOLD | Entry:5342.31 | SL:1 | TP:0 | Lot:0.01
+[2026-03-03 04:45:00] [INFO] Payload: {"action":"sell","symbol":"GOLD","sl":"0","tp":"0","lot":0.01,"price":5364.34,"time":"2026-03-03T01:42:00Z","secret":"your_webhook_secret"}
+[2026-03-03 04:45:00] [INFO] Signal: SELL GOLD | Lot:0.01 | SL:0 | TP:0
+[2026-03-03 04:45:00] [TRADE] FLIP: closing BUY → opening SELL
+[2026-03-03 04:45:00] [TRADE] Closing BUY GOLD | Reason: flipped to SELL
+[2026-03-03 04:45:00] [OK] MT closed. Price:N/A PnL:N/A
+[2026-03-03 04:45:00] [INFO] Getting AI summary...
+[2026-03-03 04:45:00] [PNL] Final PnL: N/A
+[2026-03-03 04:45:00] [OK] Flip: BUY closed ✔  Opening SELL...
+[2026-03-03 04:45:00] [OK] Order confirmed! positionId:687526206
+[2026-03-03 04:45:00] [SELL] SELL OPENED GOLD | Entry:5362.57 | SL:0 | TP:0 | Lot:0.01
+[2026-03-03 05:36:00] [INFO] Payload: {"action":"buy","symbol":"GOLD","sl":"1","tp":"0","lot":0.01,"price":5362.71,"time":"2026-03-03T02:33:00Z","secret":"your_webhook_secret"}
+[2026-03-03 05:36:00] [INFO] Signal: BUY GOLD | Lot:0.01 | SL:1 | TP:0
+[2026-03-03 05:36:00] [TRADE] FLIP: closing SELL → opening BUY
+[2026-03-03 05:36:00] [TRADE] Closing SELL GOLD | Reason: flipped to BUY
+[2026-03-03 05:36:00] [OK] MT closed. Price:N/A PnL:N/A
+[2026-03-03 05:36:00] [INFO] Getting AI summary...
+[2026-03-03 05:36:00] [PNL] Final PnL: N/A
+[2026-03-03 05:36:00] [OK] Flip: SELL closed ✔  Opening BUY...
+[2026-03-03 05:36:01] [OK] Order confirmed! positionId:687576069
+[2026-03-03 05:36:01] [BUY] BUY OPENED GOLD | Entry:5362.06 | SL:1 | TP:0 | Lot:0.01
+[2026-03-03 06:33:17] [INFO] Payload: {"action":"sell","symbol":"GBPJPY","sl":"0","tp":"0","lot":0.05,"price":210.673,"time":"2026-03-03T03:00:00Z","secret":"your_webhook_secret"}
+[2026-03-03 06:33:17] [INFO] Signal: SELL GBPJPY | Lot:0.05 | SL:0 | TP:0
+[2026-03-03 06:33:17] [TRADE] FLIP: closing BUY → opening SELL
+[2026-03-03 06:33:17] [TRADE] Closing BUY GOLD | Reason: flipped to SELL
+[2026-03-03 06:33:18] [OK] MT closed. Price:N/A PnL:N/A
+[2026-03-03 06:33:18] [INFO] Getting AI summary...
+[2026-03-03 06:33:18] [PNL] Final PnL: N/A
+[2026-03-03 06:33:18] [OK] Flip: BUY closed ✔  Opening SELL...
+[2026-03-03 06:33:18] [OK] Order confirmed! positionId:687616313
+[2026-03-03 06:33:18] [SELL] SELL OPENED GBPJPY | Entry:210.66 | SL:0 | TP:0 | Lot:0.05
+[2026-03-03 06:54:00] [INFO] Payload: {"action":"sell","symbol":"GOLD","sl":"0","tp":"0","lot":0.01,"price":5363.4,"time":"2026-03-03T03:51:00Z","secret":"your_webhook_secret"}
+[2026-03-03 06:54:00] [INFO] Signal: SELL GOLD | Lot:0.01 | SL:0 | TP:0
+[2026-03-03 06:54:00] [WARN] SELL already running! ID:T1772508798456-OVFI (GBPJPY)
+[2026-03-03 07:27:00] [INFO] Payload: {"action":"buy","symbol":"GOLD","sl":"1","tp":"0","lot":0.01,"price":5372.989,"time":"2026-03-03T04:24:00Z","secret":"your_webhook_secret"}
+[2026-03-03 07:27:00] [INFO] Signal: BUY GOLD | Lot:0.01 | SL:1 | TP:0
+[2026-03-03 07:27:00] [TRADE] FLIP: closing SELL → opening BUY
+[2026-03-03 07:27:00] [TRADE] Closing SELL GBPJPY | Reason: flipped to BUY
+[2026-03-03 07:27:00] [OK] MT closed. Price:N/A PnL:N/A
+[2026-03-03 07:27:00] [INFO] Getting AI summary...
+[2026-03-03 07:27:00] [PNL] Final PnL: N/A
+[2026-03-03 07:27:00] [OK] Flip: SELL closed ✔  Opening BUY...
+[2026-03-03 07:27:00] [OK] Order confirmed! positionId:687651797
+[2026-03-03 07:27:01] [BUY] BUY OPENED GOLD | Entry:5373.58 | SL:1 | TP:0 | Lot:0.01
+[2026-03-03 07:51:00] [INFO] Payload: {"action":"sell","symbol":"GOLD","sl":"0","tp":"0","lot":0.01,"price":5363.69,"time":"2026-03-03T04:48:00Z","secret":"your_webhook_secret"}
+[2026-03-03 07:51:00] [INFO] Signal: SELL GOLD | Lot:0.01 | SL:0 | TP:0
+[2026-03-03 07:51:00] [TRADE] FLIP: closing BUY → opening SELL
+[2026-03-03 07:51:00] [TRADE] Closing BUY GOLD | Reason: flipped to SELL
+[2026-03-03 07:51:00] [OK] MT closed. Price:N/A PnL:N/A
+[2026-03-03 07:51:00] [INFO] Getting AI summary...
+[2026-03-03 07:51:00] [PNL] Final PnL: N/A
+[2026-03-03 07:51:00] [OK] Flip: BUY closed ✔  Opening SELL...
+[2026-03-03 07:51:01] [OK] Order confirmed! positionId:687670919
+[2026-03-03 07:51:01] [SELL] SELL OPENED GOLD | Entry:5363.49 | SL:0 | TP:0 | Lot:0.01
+[2026-03-03 09:33:00] [INFO] Payload: {"action":"buy","symbol":"GOLD","sl":"1","tp":"0","lot":0.01,"price":5317.303,"time":"2026-03-03T06:30:00Z","secret":"your_webhook_secret"}
+[2026-03-03 09:33:00] [INFO] Signal: BUY GOLD | Lot:0.01 | SL:1 | TP:0
+[2026-03-03 09:33:00] [TRADE] FLIP: closing SELL → opening BUY
+[2026-03-03 09:33:00] [TRADE] Closing SELL GOLD | Reason: flipped to BUY
+[2026-03-03 09:33:00] [OK] MT closed. Price:N/A PnL:N/A
+[2026-03-03 09:33:00] [INFO] Getting AI summary...
+[2026-03-03 09:33:00] [PNL] Final PnL: N/A
+[2026-03-03 09:33:00] [OK] Flip: SELL closed ✔  Opening BUY...
+[2026-03-03 09:33:00] [OK] Order confirmed! positionId:687817406
+[2026-03-03 09:33:00] [BUY] BUY OPENED GOLD | Entry:5319.15 | SL:1 | TP:0 | Lot:0.01
+[2026-03-03 09:39:00] [INFO] Payload: {"action":"sell","symbol":"GOLD","sl":"0","tp":"1","lot":0.01,"price":5303.051,"time":"2026-03-03T06:36:00Z","secret":"your_webhook_secret"}
+[2026-03-03 09:39:00] [INFO] Signal: SELL GOLD | Lot:0.01 | SL:0 | TP:1
+[2026-03-03 09:39:00] [TRADE] FLIP: closing BUY → opening SELL
+[2026-03-03 09:39:00] [TRADE] Closing BUY GOLD | Reason: flipped to SELL
+[2026-03-03 09:39:00] [OK] MT closed. Price:N/A PnL:N/A
+[2026-03-03 09:39:00] [INFO] Getting AI summary...
+[2026-03-03 09:39:00] [PNL] Final PnL: N/A
+[2026-03-03 09:39:00] [OK] Flip: BUY closed ✔  Opening SELL...
+[2026-03-03 09:39:00] [OK] Order confirmed! positionId:687826854
+[2026-03-03 09:39:00] [SELL] SELL OPENED GOLD | Entry:5302.11 | SL:0 | TP:1 | Lot:0.01
+[2026-03-03 10:19:10] [OK] Webhook server on port 80
+[2026-03-03 10:19:10] [INFO] Webhook URL : http://54.204.233.214/webhook
+[2026-03-03 10:19:10] [INFO] Health check: http://54.204.233.214/
+[2026-03-03 10:19:10] [INFO] Log file    : /home/ubuntu/trading-bot/bot.log
+[2026-03-03 10:20:01] [OK] Synced from MT successfully.
+[2026-03-03 10:21:10] [OK] Default lot size set to 0.01
+[2026-03-03 10:28:57] [INFO] Payload: {"action":"buy","symbol":"GOLD","lot":0.01,"price":"2045.50","time":"2026-03-03T10:30:00Z","secret":"your_webhook_secret"}
+[2026-03-03 10:28:57] [INFO] Signal: BUY GOLD | Lot:0.01 | SL:— | TP:—
+[2026-03-03 10:28:57] [TRADE] FLIP GOLD: closing SELL → opening BUY
+[2026-03-03 10:28:57] [TRADE] Closing positionId:687826854 | Reason: flipped to BUY
+[2026-03-03 10:28:57] [OK] MT closed. Price:N/A PnL:N/A
+[2026-03-03 10:28:57] [INFO] Getting AI summary...
+[2026-03-03 10:28:57] [PNL] PnL: N/A
+[2026-03-03 10:28:57] [OK] Flip GOLD: SELL closed ✔  Opening BUY...
+[2026-03-03 10:28:57] [INFO] SL: 140 (default)
+[2026-03-03 10:28:57] [INFO] TP: 200 (default)
+[2026-03-03 10:28:57] [INFO] Trailing SL: 150 (will be set after fill)
+[2026-03-03 10:28:57] [WARN] No positionId in trade response — polling positions...
+[2026-03-03 10:28:59] [WARN] MetaAPI timed out — waiting 4s then polling MT positions...
+[2026-03-03 10:29:04] [ERR] No matching BUY position found on MT after timeout.
+[2026-03-03 10:29:04] [ERR] Cannot confirm trade on MT. ABORTED.
+[2026-03-03 10:29:30] [INFO] Payload: {"action":"buy","symbol":"GOLD","lot":0.01,"price":"2045.50","time":"2026-03-03T10:30:00Z","secret":"your_webhook_secret"}
+[2026-03-03 10:29:30] [INFO] Signal: BUY GOLD | Lot:0.01 | SL:— | TP:—
+[2026-03-03 10:29:30] [INFO] SL: 140 (default)
+[2026-03-03 10:29:30] [INFO] TP: 200 (default)
+[2026-03-03 10:29:30] [INFO] Trailing SL: 150 (will be set after fill)
+[2026-03-03 10:29:30] [WARN] No positionId in trade response — polling positions...
+[2026-03-03 10:29:32] [WARN] MetaAPI timed out — waiting 4s then polling MT positions...
+[2026-03-03 10:29:36] [ERR] No matching BUY position found on MT after timeout.
+[2026-03-03 10:29:36] [ERR] Cannot confirm trade on MT. ABORTED.
+[2026-03-03 10:34:02] [OK] Webhook server on port 80
+[2026-03-03 10:34:02] [INFO] Webhook URL : http://54.204.233.214/webhook
+[2026-03-03 10:34:02] [INFO] Health check: http://54.204.233.214/
+[2026-03-03 10:34:02] [INFO] Log file    : /home/ubuntu/trading-bot/bot.log
+[2026-03-03 10:34:37] [INFO] Payload: {"action":"buy","symbol":"GOLD","lot":0.01,"price":"2045.50","time":"2026-03-03T10:30:00Z","secret":"your_webhook_secret"}
+[2026-03-03 10:34:37] [INFO] Signal: BUY GOLD | Lot:0.01 | SL:— | TP:—
+[2026-03-03 10:34:37] [INFO] SL: 140 (default)
+[2026-03-03 10:34:37] [INFO] TP: 200 (default)
+[2026-03-03 10:34:37] [INFO] Trailing SL: 150 (will be set after fill)
+[2026-03-03 10:34:38] [INFO] MT trade response: {"numericCode":10016,"stringCode":"TRADE_RETCODE_INVALID_STOPS","message":"Invalid stops in the request"}
+[2026-03-03 10:34:38] [WARN] No positionId in trade response — polling MT positions (2s wait)...
+[2026-03-03 10:34:38] [WARN] Polling MT positions in 2000ms...
+[2026-03-03 10:34:40] [INFO] MT positions returned (0): 
+[2026-03-03 10:34:40] [ERR] No BUY position found for GOLD on MT.
+[2026-03-03 10:34:40] [WARN] Positions on MT: NONE
+[2026-03-03 10:34:40] [ERR] Cannot confirm trade on MT. ABORTED — check MT terminal manually.
+[2026-03-03 10:36:20] [INFO] Payload: {"action":"sell","symbol":"GOLD","lot":0.01,"time":"2026-03-03T10:30:00Z","secret":"your_webhook_secret"}
+[2026-03-03 10:36:20] [INFO] Signal: SELL GOLD | Lot:0.01 | SL:— | TP:—
+[2026-03-03 10:36:20] [INFO] SL: 140 (default)
+[2026-03-03 10:36:20] [INFO] TP: 200 (default)
+[2026-03-03 10:36:20] [INFO] Trailing SL: 150 (will be set after fill)
+[2026-03-03 10:36:20] [INFO] MT trade response: {"numericCode":10016,"stringCode":"TRADE_RETCODE_INVALID_STOPS","message":"Invalid stops in the request"}
+[2026-03-03 10:36:20] [WARN] No positionId in trade response — polling MT positions (2s wait)...
+[2026-03-03 10:36:20] [WARN] Polling MT positions in 2000ms...
+[2026-03-03 10:36:22] [INFO] MT positions returned (0): 
+[2026-03-03 10:36:22] [ERR] No SELL position found for GOLD on MT.
+[2026-03-03 10:36:22] [WARN] Positions on MT: NONE
+[2026-03-03 10:36:22] [ERR] Cannot confirm trade on MT. ABORTED — check MT terminal manually.
+[2026-03-03 10:36:45] [INFO] Payload: {"action":"sell","symbol":"GBPJPY","lot":0.01,"time":"2026-03-03T10:30:00Z","secret":"your_webhook_secret"}
+[2026-03-03 10:36:45] [INFO] Signal: SELL GBPJPY | Lot:0.01 | SL:— | TP:—
+[2026-03-03 10:36:45] [INFO] SL: 140 (default)
+[2026-03-03 10:36:45] [INFO] TP: 200 (default)
+[2026-03-03 10:36:45] [INFO] Trailing SL: 150 (will be set after fill)
+[2026-03-03 10:36:45] [INFO] MT trade response: {"numericCode":10016,"stringCode":"TRADE_RETCODE_INVALID_STOPS","message":"Invalid stops in the request"}
+[2026-03-03 10:36:45] [WARN] No positionId in trade response — polling MT positions (2s wait)...
+[2026-03-03 10:36:45] [WARN] Polling MT positions in 2000ms...
+[2026-03-03 10:36:48] [INFO] MT positions returned (0): 
+[2026-03-03 10:36:48] [ERR] No SELL position found for GBPJPY on MT.
+[2026-03-03 10:36:48] [WARN] Positions on MT: NONE
+[2026-03-03 10:36:48] [ERR] Cannot confirm trade on MT. ABORTED — check MT terminal manually.
+[2026-03-03 10:39:00] [INFO] Payload: {"action":"buy","symbol":"GOLD","lot":0.01,"price":5324.93,"time":"2026-03-03T07:36:00Z","secret":"your_webhook_secret"}
+[2026-03-03 10:39:00] [INFO] Signal: BUY GOLD | Lot:0.01 | SL:— | TP:—
+[2026-03-03 10:39:00] [INFO] SL: 140 (default)
+[2026-03-03 10:39:00] [INFO] TP: 200 (default)
+[2026-03-03 10:39:00] [INFO] Trailing SL: 150 (will be set after fill)
+[2026-03-03 10:39:00] [INFO] MT trade response: {"numericCode":10016,"stringCode":"TRADE_RETCODE_INVALID_STOPS","message":"Invalid stops in the request"}
+[2026-03-03 10:39:00] [WARN] No positionId in trade response — polling MT positions (2s wait)...
+[2026-03-03 10:39:00] [WARN] Polling MT positions in 2000ms...
+[2026-03-03 10:39:02] [INFO] MT positions returned (0): 
+[2026-03-03 10:39:02] [ERR] No BUY position found for GOLD on MT.
+[2026-03-03 10:39:02] [WARN] Positions on MT: NONE
+[2026-03-03 10:39:02] [ERR] Cannot confirm trade on MT. ABORTED — check MT terminal manually.
+[2026-03-03 10:41:58] [INFO] Payload: {"action":"sell","symbol":"GOLD","lot":0.01,"time":"2026-03-03T10:30:00Z","secret":"your_webhook_secret"}
+[2026-03-03 10:41:58] [INFO] Signal: SELL GOLD | Lot:0.01 | SL:— | TP:—
+[2026-03-03 10:41:58] [INFO] SL: 140 (default)
+[2026-03-03 10:41:58] [INFO] TP: 200 (default)
+[2026-03-03 10:41:58] [INFO] Trailing SL: 150 (will be set after fill)
+[2026-03-03 10:41:58] [INFO] MT trade response: {"numericCode":10016,"stringCode":"TRADE_RETCODE_INVALID_STOPS","message":"Invalid stops in the request"}
+[2026-03-03 10:41:58] [WARN] No positionId in trade response — polling MT positions (2s wait)...
+[2026-03-03 10:41:58] [WARN] Polling MT positions in 2000ms...
+[2026-03-03 10:42:00] [INFO] MT positions returned (1): GOLD/POSITION_TYPE_SELL/id:687898452
+[2026-03-03 10:42:00] [OK] Position confirmed! ID:687898452 symbol:GOLD entry:5322.97
+[2026-03-03 10:42:00] [OK] Trailing SL set: 150
+[2026-03-03 10:42:00] [SELL] SELL OPENED GOLD | Entry:5322.97 | SL:140 [def] | TP:200 [def] | Lot:0.01 | Trail:150
+[2026-03-03 10:42:27] [INFO] Payload: {"action":"sell","symbol":"GOLD","lot":0.01,"time":"2026-03-03T10:30:00Z","secret":"your_webhook_secret"}
+[2026-03-03 10:42:27] [INFO] Signal: SELL GOLD | Lot:0.01 | SL:— | TP:—
+[2026-03-03 10:42:27] [WARN] SELL already running for GOLD! ID:T1772523720714-YW9R
+[2026-03-03 10:42:40] [TRADE] Closing positionId:687898452 | Reason: CLI manual close
+[2026-03-03 10:42:40] [OK] MT closed. Price:N/A PnL:N/A
+[2026-03-03 10:42:40] [INFO] Getting AI summary...
+[2026-03-03 10:42:40] [PNL] PnL: N/A
+[2026-03-03 10:42:53] [INFO] Payload: {"action":"sell","symbol":"GOLD","lot":0.01,"time":"2026-03-03T10:30:00Z","secret":"your_webhook_secret"}
+[2026-03-03 10:42:53] [INFO] Signal: SELL GOLD | Lot:0.01 | SL:— | TP:—
+[2026-03-03 10:42:53] [INFO] SL: 140 (default)
+[2026-03-03 10:42:53] [INFO] TP: 200 (default)
+[2026-03-03 10:42:53] [INFO] Trailing SL: 150 (will be set after fill)
+[2026-03-03 10:42:53] [INFO] MT trade response: {"numericCode":10016,"stringCode":"TRADE_RETCODE_INVALID_STOPS","message":"Invalid stops in the request"}
+[2026-03-03 10:42:53] [WARN] No positionId in trade response — polling MT positions (2s wait)...
+[2026-03-03 10:42:53] [WARN] Polling MT positions in 2000ms...
+[2026-03-03 10:42:55] [INFO] MT positions returned (0): 
+[2026-03-03 10:42:55] [ERR] No SELL position found for GOLD on MT.
+[2026-03-03 10:42:55] [WARN] Positions on MT: NONE
+[2026-03-03 10:42:55] [ERR] Cannot confirm trade on MT. ABORTED — check MT terminal manually.
+[2026-03-03 10:43:12] [INFO] Payload: {"action":"sell","symbol":"GOLD","lot":0.01,"time":"2026-03-03T10:30:00Z","secret":"your_webhook_secret"}
+[2026-03-03 10:43:12] [INFO] Signal: SELL GOLD | Lot:0.01 | SL:— | TP:—
+[2026-03-03 10:43:12] [INFO] SL: 140 (default)
+[2026-03-03 10:43:12] [INFO] TP: 200 (default)
+[2026-03-03 10:43:12] [INFO] Trailing SL: 150 (will be set after fill)
+[2026-03-03 10:43:12] [INFO] MT trade response: {"numericCode":10016,"stringCode":"TRADE_RETCODE_INVALID_STOPS","message":"Invalid stops in the request"}
+[2026-03-03 10:43:12] [WARN] No positionId in trade response — polling MT positions (2s wait)...
+[2026-03-03 10:43:12] [WARN] Polling MT positions in 2000ms...
+[2026-03-03 10:43:14] [INFO] MT positions returned (0): 
+[2026-03-03 10:43:14] [ERR] No SELL position found for GOLD on MT.
+[2026-03-03 10:43:14] [WARN] Positions on MT: NONE
+[2026-03-03 10:43:14] [ERR] Cannot confirm trade on MT. ABORTED — check MT terminal manually.
+[2026-03-03 11:05:41] [INFO] MT live: 0  (none)
+[2026-03-03 11:05:41] [INFO] DB open: 0  (none)
+[2026-03-03 11:05:41] [OK] Reconcile done. DB open: 0 | MT positions: 0
+[2026-03-03 11:05:41] [INFO] Background reconcile every 15s (detects external trades & SL/TP hits)
+[2026-03-03 11:05:41] [OK] Webhook server on port 80
+[2026-03-03 11:05:41] [INFO] Webhook : http://54.204.233.214/webhook
+[2026-03-03 11:05:41] [INFO] Health  : http://54.204.233.214/
+[2026-03-03 11:05:41] [INFO] Debug   : http://54.204.233.214/debug
+[2026-03-03 11:07:02] [INFO] MT live: 0  (none)
+[2026-03-03 11:07:02] [INFO] DB open: 0  (none)
+[2026-03-03 11:07:02] [OK] Reconcile done. DB open: 0 | MT positions: 0
+[2026-03-03 11:08:24] [INFO] Signal: BUY GOLD lot:0.02 sl:— tp:—
+[2026-03-03 11:08:24] [INFO] Symbol info: pip=0.01 decimals=2 priceRange:[100,5000]
+[2026-03-03 11:08:24] [INFO] SL: 140 pips from entry (will calc after fill)
+[2026-03-03 11:08:24] [INFO] TP: 200 pips from entry (will calc after fill)
+[2026-03-03 11:08:24] [INFO] Trailing SL: 150 pips — will set after fill
+[2026-03-03 11:08:24] [INFO] → Entering trade with NO SL/TP to avoid INVALID_STOPS
+[2026-03-03 11:08:24] [INFO] MT response: {"stringCode":"TRADE_RETCODE_DONE","numericCode":10009,"message":"Request completed","orderId":"687925368","positionId":"687925368","tradeExecutionTime":"2026-03-03T10:08:25.110Z","tradeStartTime":"2026-03-03T08:08:24.587Z"}
+[2026-03-03 11:08:24] [INFO] Raw MT response: {"stringCode":"TRADE_RETCODE_DONE","numericCode":10009,"message":"Request completed","orderId":"687925368","positionId":"687925368","tradeExecutionTime":"2026-03-03T10:08:25.110Z","tradeStartTime":"2026-03-03T08:08:24.587Z"}
+[2026-03-03 11:08:24] [OK] MT confirmed positionId:687925368
+[2026-03-03 11:08:24] [INFO] Pip calc for GOLD: pip=0.01 entry=5327.18 SL=140pips→5325.78 TP=200pips→5329.18
+[2026-03-03 11:08:24] [WARN] Post-fill modify failed: ValidationError — Validation failed
+[2026-03-03 11:08:24] [WARN] Trade open, SL/TP NOT set. Use "update GOLD" to set manually.
+[2026-03-03 11:08:24] [BUY] BUY OPENED GOLD entry:5327.18 SL:— [default-pips] TP:— [default-pips] lot:0.02
+[2026-03-03 11:10:43] [INFO] Signal: BUY GBPJPY lot:0.02 sl:— tp:—
+[2026-03-03 11:10:43] [INFO] Other open: GOLD BUY — adding GBPJPY
+[2026-03-03 11:10:43] [INFO] Symbol info: pip=0.01 decimals=3 priceRange:[50,250]
+[2026-03-03 11:10:43] [INFO] SL: 140 pips from entry (will calc after fill)
+[2026-03-03 11:10:43] [INFO] TP: 200 pips from entry (will calc after fill)
+[2026-03-03 11:10:43] [INFO] Trailing SL: 150 pips — will set after fill
+[2026-03-03 11:10:43] [INFO] → Entering trade with NO SL/TP to avoid INVALID_STOPS
+[2026-03-03 11:10:44] [INFO] MT response: {"stringCode":"TRADE_RETCODE_DONE","numericCode":10009,"message":"Request completed","orderId":"687927312","positionId":"687927312","tradeExecutionTime":"2026-03-03T10:10:44.573Z","tradeStartTime":"2026-03-03T08:10:44.064Z"}
+[2026-03-03 11:10:44] [INFO] Raw MT response: {"stringCode":"TRADE_RETCODE_DONE","numericCode":10009,"message":"Request completed","orderId":"687927312","positionId":"687927312","tradeExecutionTime":"2026-03-03T10:10:44.573Z","tradeStartTime":"2026-03-03T08:10:44.064Z"}
+[2026-03-03 11:10:44] [OK] MT confirmed positionId:687927312
+[2026-03-03 11:10:44] [INFO] Pip calc for GBPJPY: pip=0.01 entry=209.754 SL=140pips→208.354 TP=200pips→211.754
+[2026-03-03 11:10:44] [WARN] Post-fill modify failed: ValidationError — Validation failed
+[2026-03-03 11:10:44] [WARN] Trade open, SL/TP NOT set. Use "update GBPJPY" to set manually.
+[2026-03-03 11:10:44] [BUY] BUY OPENED GBPJPY entry:209.754 SL:— [default-pips] TP:— [default-pips] lot:0.02
+[2026-03-03 11:11:10] [INFO] Signal: BUY GBPJPY lot:0.02 sl:— tp:—
+[2026-03-03 11:11:10] [WARN] BUY already open for GBPJPY — blocked
+[2026-03-03 11:11:52] [INFO] Signal: BUY GOLD lot:0.02 sl:— tp:—
+[2026-03-03 11:11:52] [WARN] BUY already open for GOLD — blocked
+[2026-03-03 11:15:00] [INFO] Payload: {"action":"sell","symbol":"GOLD","lot":0.01,"price":5319.927,"time":"2026-03-03T08:12:00Z","secret":"your_webhook_secret"}
+[2026-03-03 11:15:00] [INFO] Signal: SELL GOLD lot:0.01 sl:— tp:—
+[2026-03-03 11:15:00] [TRD] FLIP GOLD: closing BUY → opening SELL
+[2026-03-03 11:15:00] [TRD] posId:687925368 reason:flipped to SELL
+[2026-03-03 11:15:00] [OK] Closed. Price:? PnL:?
+[2026-03-03 11:15:00] [PNL] PnL: N/A
+[2026-03-03 11:15:00] [OK] Flip: BUY closed ✔  Opening SELL...
+[2026-03-03 11:15:00] [INFO] Symbol info: pip=0.01 decimals=2 priceRange:[100,5000]
+[2026-03-03 11:15:00] [INFO] SL: 140 pips from entry (will calc after fill)
+[2026-03-03 11:15:00] [INFO] TP: 200 pips from entry (will calc after fill)
+[2026-03-03 11:15:00] [INFO] Trailing SL: 150 pips — will set after fill
+[2026-03-03 11:15:00] [INFO] → Entering trade with NO SL/TP to avoid INVALID_STOPS
+[2026-03-03 11:15:00] [INFO] MT response: {"stringCode":"TRADE_RETCODE_DONE","numericCode":10009,"message":"Request completed","orderId":"687931096","positionId":"687931096","tradeExecutionTime":"2026-03-03T10:15:01.271Z","tradeStartTime":"2026-03-03T08:15:00.766Z"}
+[2026-03-03 11:15:00] [INFO] Raw MT response: {"stringCode":"TRADE_RETCODE_DONE","numericCode":10009,"message":"Request completed","orderId":"687931096","positionId":"687931096","tradeExecutionTime":"2026-03-03T10:15:01.271Z","tradeStartTime":"2026-03-03T08:15:00.766Z"}
+[2026-03-03 11:15:00] [OK] MT confirmed positionId:687931096
+[2026-03-03 11:15:00] [INFO] Pip calc for GOLD: pip=0.01 entry=5320.51 SL=140pips→5321.91 TP=200pips→5318.51
+[2026-03-03 11:15:01] [WARN] Post-fill modify failed: ValidationError — Validation failed
+[2026-03-03 11:15:01] [WARN] Trade open, SL/TP NOT set. Use "update GOLD" to set manually.
+[2026-03-03 11:15:01] [SELL] SELL OPENED GOLD entry:5320.51 SL:— [default-pips] TP:— [default-pips] lot:0.01
+[2026-03-03 11:35:56] [WARN] [CLOSED EXTERNALLY] GBPJPY BUY posId:687927312 (1513s old) — marking closed in DB
+[2026-03-03 11:35:56] [PNL] External close PnL: -1.66 USD
+[2026-03-03 11:35:56] [WARN] [CLOSED EXTERNALLY] GOLD SELL posId:687931096 (1437s old) — marking closed in DB
+[2026-03-03 11:35:56] [PNL] External close PnL: 14.43 USD
+[2026-03-03 11:45:01] [WARN] [RECONCILE] fetch failed: Positions fetch error 504: It seems like the account 1081809c-f153-494b-bed2-d8272d993d1a is not connected to broker yet or request URL you use does not match the account region. Please make sure account is connected to broker before retrying the request. You can find valid URL at https://app.metaapi.cloud/api-access/api-urls — skipping to avoid false closes
+[2026-03-03 11:45:17] [WARN] [RECONCILE] fetch failed: Positions fetch error 504: It seems like the account 1081809c-f153-494b-bed2-d8272d993d1a is not connected to broker yet or request URL you use does not match the account region. Please make sure account is connected to broker before retrying the request. You can find valid URL at https://app.metaapi.cloud/api-access/api-urls — skipping to avoid false closes
+[2026-03-03 11:52:17] [WARN] [RECONCILE] fetch failed: Positions fetch error 504: It seems like the account 1081809c-f153-494b-bed2-d8272d993d1a is not connected to broker yet or request URL you use does not match the account region. Please make sure account is connected to broker before retrying the request. You can find valid URL at https://app.metaapi.cloud/api-access/api-urls — skipping to avoid false closes
+[2026-03-03 11:52:32] [WARN] [RECONCILE] fetch failed: Positions fetch error 504: It seems like the account 1081809c-f153-494b-bed2-d8272d993d1a is not connected to broker yet or request URL you use does not match the account region. Please make sure account is connected to broker before retrying the request. You can find valid URL at https://app.metaapi.cloud/api-access/api-urls — skipping to avoid false closes
+[2026-03-03 11:54:32] [WARN] [RECONCILE] fetch failed: Positions fetch error 504: It seems like the account 1081809c-f153-494b-bed2-d8272d993d1a is not connected to broker yet or request URL you use does not match the account region. Please make sure account is connected to broker before retrying the request. You can find valid URL at https://app.metaapi.cloud/api-access/api-urls — skipping to avoid false closes
+[2026-03-03 11:54:47] [WARN] [RECONCILE] fetch failed: Positions fetch error 504: It seems like the account 1081809c-f153-494b-bed2-d8272d993d1a is not connected to broker yet or request URL you use does not match the account region. Please make sure account is connected to broker before retrying the request. You can find valid URL at https://app.metaapi.cloud/api-access/api-urls — skipping to avoid false closes
+[2026-03-03 11:55:02] [WARN] [RECONCILE] fetch failed: Positions fetch error 504: It seems like the account 1081809c-f153-494b-bed2-d8272d993d1a is not connected to broker yet or request URL you use does not match the account region. Please make sure account is connected to broker before retrying the request. You can find valid URL at https://app.metaapi.cloud/api-access/api-urls — skipping to avoid false closes
+[2026-03-03 11:57:02] [WARN] [RECONCILE] fetch failed: Positions fetch error 504: It seems like the account 1081809c-f153-494b-bed2-d8272d993d1a is not connected to broker yet or request URL you use does not match the account region. Please make sure account is connected to broker before retrying the request. You can find valid URL at https://app.metaapi.cloud/api-access/api-urls — skipping to avoid false closes
+[2026-03-03 11:57:17] [WARN] [RECONCILE] fetch failed: Positions fetch error 504: It seems like the account 1081809c-f153-494b-bed2-d8272d993d1a is not connected to broker yet or request URL you use does not match the account region. Please make sure account is connected to broker before retrying the request. You can find valid URL at https://app.metaapi.cloud/api-access/api-urls — skipping to avoid false closes
+[2026-03-03 13:21:09] [INFO] MT live: 0  (none)
+[2026-03-03 13:21:09] [INFO] DB open: 0  (none)
+[2026-03-03 13:21:09] [OK] Reconcile done. DB open: 0 | MT positions: 0
+[2026-03-03 13:21:09] [INFO] Background reconcile every 15s (detects external trades & SL/TP hits)
+[2026-03-03 13:21:09] [OK] Webhook server on port 80
+[2026-03-03 13:21:09] [INFO] Webhook : http://54.204.233.214/webhook
+[2026-03-03 13:21:09] [INFO] Health  : http://54.204.233.214/
+[2026-03-03 13:21:09] [INFO] Debug   : http://54.204.233.214/debug
+[2026-03-03 13:21:38] [INFO] MT live: 0  (none)
+[2026-03-03 13:21:38] [INFO] DB open: 0  (none)
+[2026-03-03 13:21:38] [OK] Reconcile done. DB open: 0 | MT positions: 0
+[2026-03-03 13:26:41] [INFO] Payload: {"action":"sell","symbol":"GOLD","lot":0.01,"time":"2026-03-03T10:30:00Z","secret":"your_webhook_secret"}
+[2026-03-03 13:26:41] [INFO] Signal: SELL GOLD lot:0.01 sl:— tp:—
+[2026-03-03 13:26:41] [INFO] Symbol info: pip=0.01 decimals=2 priceRange:[100,5000]
+[2026-03-03 13:26:41] [INFO] SL: 140 pips from entry (will calc after fill)
+[2026-03-03 13:26:41] [INFO] TP: 200 pips from entry (will calc after fill)
+[2026-03-03 13:26:41] [INFO] Trailing SL: 150 pips — will set after fill
+[2026-03-03 13:26:41] [INFO] → Entering trade with NO SL/TP to avoid INVALID_STOPS
+[2026-03-03 13:26:41] [INFO] MT response: {"stringCode":"TRADE_RETCODE_DONE","numericCode":10009,"message":"Request completed","orderId":"688121790","positionId":"688121790","tradeExecutionTime":"2026-03-03T12:26:42.409Z","tradeStartTime":"2026-03-03T10:26:41.888Z"}
+[2026-03-03 13:26:41] [INFO] Raw MT response: {"stringCode":"TRADE_RETCODE_DONE","numericCode":10009,"message":"Request completed","orderId":"688121790","positionId":"688121790","tradeExecutionTime":"2026-03-03T12:26:42.409Z","tradeStartTime":"2026-03-03T10:26:41.888Z"}
+[2026-03-03 13:26:41] [OK] MT confirmed positionId:688121790
+[2026-03-03 13:26:42] [INFO] Pip calc for GOLD: pip=0.01 entry=5275.36 SL=140pips→5276.76 TP=200pips→5273.36
+[2026-03-03 13:26:42] [WARN] Post-fill modify failed: ValidationError — Validation failed
+[2026-03-03 13:26:42] [WARN] Trade open, SL/TP NOT set. Use "update GOLD" to set manually.
+[2026-03-03 13:26:42] [SELL] SELL OPENED GOLD entry:5275.36 SL:— [default-pips] TP:— [default-pips] lot:0.01
+[2026-03-03 13:26:49] [INFO] Payload: {"action":"sell","symbol":"GOLD","lot":0.01,"time":"2026-03-03T10:30:00Z","secret":"your_webhook_secret"}
+[2026-03-03 13:26:49] [INFO] Signal: SELL GOLD lot:0.01 sl:— tp:—
+[2026-03-03 13:26:49] [WARN] SELL already open for GOLD — blocked
+[2026-03-03 13:27:13] [INFO] Payload: {"action":"buy","symbol":"GOLD","lot":0.01,"time":"2026-03-03T10:30:00Z","secret":"your_webhook_secret"}
+[2026-03-03 13:27:13] [INFO] Signal: BUY GOLD lot:0.01 sl:— tp:—
+[2026-03-03 13:27:13] [TRD] FLIP GOLD: closing SELL → opening BUY
+[2026-03-03 13:27:13] [TRD] posId:688121790 reason:flipped to BUY
+[2026-03-03 13:27:13] [OK] Closed. Price:? PnL:?
+[2026-03-03 13:27:13] [PNL] PnL: N/A
+[2026-03-03 13:27:13] [OK] Flip: SELL closed ✔  Opening BUY...
+[2026-03-03 13:27:13] [INFO] Symbol info: pip=0.01 decimals=2 priceRange:[100,5000]
+[2026-03-03 13:27:13] [INFO] SL: 140 pips from entry (will calc after fill)
+[2026-03-03 13:27:13] [INFO] TP: 200 pips from entry (will calc after fill)
+[2026-03-03 13:27:13] [INFO] Trailing SL: 150 pips — will set after fill
+[2026-03-03 13:27:13] [INFO] → Entering trade with NO SL/TP to avoid INVALID_STOPS
+[2026-03-03 13:27:13] [INFO] MT response: {"stringCode":"TRADE_RETCODE_DONE","numericCode":10009,"message":"Request completed","orderId":"688122780","positionId":"688122780","tradeExecutionTime":"2026-03-03T12:27:13.785Z","tradeStartTime":"2026-03-03T10:27:13.272Z"}
+[2026-03-03 13:27:13] [INFO] Raw MT response: {"stringCode":"TRADE_RETCODE_DONE","numericCode":10009,"message":"Request completed","orderId":"688122780","positionId":"688122780","tradeExecutionTime":"2026-03-03T12:27:13.785Z","tradeStartTime":"2026-03-03T10:27:13.272Z"}
+[2026-03-03 13:27:13] [OK] MT confirmed positionId:688122780
+[2026-03-03 13:27:13] [INFO] Pip calc for GOLD: pip=0.01 entry=5279.23 SL=140pips→5277.83 TP=200pips→5281.23
+[2026-03-03 13:27:13] [WARN] Post-fill modify failed: ValidationError — Validation failed
+[2026-03-03 13:27:13] [WARN] Trade open, SL/TP NOT set. Use "update GOLD" to set manually.
+[2026-03-03 13:27:13] [BUY] BUY OPENED GOLD entry:5279.23 SL:— [default-pips] TP:— [default-pips] lot:0.01
+[2026-03-03 13:39:57] [ERR] Modify error: TRADE_RETCODE_INVALID_STOPS — Invalid stops in the request
+[2026-03-03 13:39:57] [OK] DB updated. SL:5260 TP:5295
+[2026-03-03 13:40:39] [OK] MT modified SL:5230 TP:5295
+[2026-03-03 13:40:39] [OK] DB updated. SL:5230 TP:5295
+[2026-03-03 13:41:49] [INFO] Payload: {"action":"buy","symbol":"GBPJPY","lot":0.01,"time":"2026-03-03T10:30:00Z","secret":"your_webhook_secret"}
+[2026-03-03 13:41:49] [INFO] Signal: BUY GBPJPY lot:0.01 sl:— tp:—
+[2026-03-03 13:41:49] [INFO] Other open: GOLD BUY — adding GBPJPY
+[2026-03-03 13:41:49] [INFO] Symbol info: pip=0.01 decimals=3 priceRange:[50,250]
+[2026-03-03 13:41:49] [INFO] SL: 140 pips from entry (will calc after fill)
+[2026-03-03 13:41:49] [INFO] TP: 200 pips from entry (will calc after fill)
+[2026-03-03 13:41:49] [INFO] Trailing SL: 150 pips — will set after fill
+[2026-03-03 13:41:49] [INFO] → Entering trade with NO SL/TP to avoid INVALID_STOPS
+[2026-03-03 13:41:49] [INFO] MT response: {"stringCode":"TRADE_RETCODE_DONE","numericCode":10009,"message":"Request completed","orderId":"688143383","positionId":"688143383","tradeExecutionTime":"2026-03-03T12:41:50.107Z","tradeStartTime":"2026-03-03T10:41:49.594Z"}
+[2026-03-03 13:41:49] [INFO] Raw MT response: {"stringCode":"TRADE_RETCODE_DONE","numericCode":10009,"message":"Request completed","orderId":"688143383","positionId":"688143383","tradeExecutionTime":"2026-03-03T12:41:50.107Z","tradeStartTime":"2026-03-03T10:41:49.594Z"}
+[2026-03-03 13:41:49] [OK] MT confirmed positionId:688143383
+[2026-03-03 13:41:49] [INFO] Pip calc for GBPJPY: pip=0.01 entry=209.905 SL=140pips→208.505 TP=200pips→211.905
+[2026-03-03 13:41:49] [WARN] Post-fill modify failed: ValidationError — Validation failed
+[2026-03-03 13:41:49] [WARN] Trade open, SL/TP NOT set. Use "update GBPJPY" to set manually.
+[2026-03-03 13:41:49] [BUY] BUY OPENED GBPJPY entry:209.905 SL:— [default-pips] TP:— [default-pips] lot:0.01
+[2026-03-03 13:42:24] [INFO] Payload: {"action":"buy","symbol":"GBPJPY","lot":0.01,"time":"2026-03-03T10:30:00Z","secret":"your_webhook_secret"}
+[2026-03-03 13:42:24] [INFO] Signal: BUY GBPJPY lot:0.01 sl:— tp:—
+[2026-03-03 13:42:24] [WARN] BUY already open for GBPJPY — blocked
+[2026-03-03 13:42:37] [INFO] Payload: {"action":"buy","symbol":"GBPJPY","lot":0.01,"time":"2026-03-03T10:30:00Z","secret":"your_webhook_secret"}
+[2026-03-03 13:42:37] [INFO] Signal: BUY GBPJPY lot:0.01 sl:— tp:—
+[2026-03-03 13:42:37] [WARN] BUY already open for GBPJPY — blocked
+[2026-03-03 13:42:50] [INFO] Payload: {"action":"sell","symbol":"GOLD","lot":0.01,"time":"2026-03-03T10:30:00Z","secret":"your_webhook_secret"}
+[2026-03-03 13:42:50] [INFO] Signal: SELL GOLD lot:0.01 sl:— tp:—
+[2026-03-03 13:42:50] [TRD] FLIP GOLD: closing BUY → opening SELL
+[2026-03-03 13:42:50] [TRD] posId:688122780 reason:flipped to SELL
+[2026-03-03 13:42:51] [OK] Closed. Price:? PnL:?
+[2026-03-03 13:42:51] [PNL] PnL: N/A
+[2026-03-03 13:42:51] [OK] Flip: BUY closed ✔  Opening SELL...
+[2026-03-03 13:42:51] [INFO] Symbol info: pip=0.01 decimals=2 priceRange:[100,5000]
+[2026-03-03 13:42:51] [INFO] SL: 140 pips from entry (will calc after fill)
+[2026-03-03 13:42:51] [INFO] TP: 200 pips from entry (will calc after fill)
+[2026-03-03 13:42:51] [INFO] Trailing SL: 150 pips — will set after fill
+[2026-03-03 13:42:51] [INFO] → Entering trade with NO SL/TP to avoid INVALID_STOPS
+[2026-03-03 13:42:51] [INFO] MT response: {"stringCode":"TRADE_RETCODE_DONE","numericCode":10009,"message":"Request completed","orderId":"688144715","positionId":"688144715","tradeExecutionTime":"2026-03-03T12:42:52.085Z","tradeStartTime":"2026-03-03T10:42:51.581Z"}
+[2026-03-03 13:42:51] [INFO] Raw MT response: {"stringCode":"TRADE_RETCODE_DONE","numericCode":10009,"message":"Request completed","orderId":"688144715","positionId":"688144715","tradeExecutionTime":"2026-03-03T12:42:52.085Z","tradeStartTime":"2026-03-03T10:42:51.581Z"}
+[2026-03-03 13:42:51] [OK] MT confirmed positionId:688144715
+[2026-03-03 13:42:51] [INFO] Pip calc for GOLD: pip=0.01 entry=5265.78 SL=140pips→5267.18 TP=200pips→5263.78
+[2026-03-03 13:42:51] [WARN] Post-fill modify failed: ValidationError — Validation failed
+[2026-03-03 13:42:51] [WARN] Trade open, SL/TP NOT set. Use "update GOLD" to set manually.
+[2026-03-03 13:42:51] [SELL] SELL OPENED GOLD entry:5265.78 SL:— [default-pips] TP:— [default-pips] lot:0.01
+[2026-03-03 13:46:47] [INFO] MT live: 2 — GBPJPY/BUY id:688143383, GOLD/SELL id:688144715
+[2026-03-03 13:46:47] [INFO] DB open: 2 — GBPJPY/BUY posId:688143383, GOLD/SELL posId:688144715
+[2026-03-03 13:46:47] [OK] Reconcile done. DB open: 2 | MT positions: 2
+[2026-03-03 13:50:37] [INFO] MT live: 2 — GBPJPY/BUY id:688143383, GOLD/SELL id:688144715
+[2026-03-03 13:50:37] [INFO] DB open: 2 — GBPJPY/BUY posId:688143383, GOLD/SELL posId:688144715
+[2026-03-03 13:50:37] [OK] Reconcile done. DB open: 2 | MT positions: 2
+[2026-03-03 13:56:39] [INFO] MT live: 2 — GBPJPY/BUY id:688143383, GOLD/SELL id:688144715
+[2026-03-03 13:56:39] [INFO] DB open: 2 — GBPJPY/BUY posId:688143383, GOLD/SELL posId:688144715
+[2026-03-03 13:56:39] [OK] Reconcile done. DB open: 2 | MT positions: 2
+[2026-03-03 13:57:38] [INFO] MT live: 2 — GBPJPY/BUY id:688143383, GOLD/SELL id:688144715
+[2026-03-03 13:57:38] [INFO] DB open: 2 — GBPJPY/BUY posId:688143383, GOLD/SELL posId:688144715
+[2026-03-03 13:57:38] [OK] Reconcile done. DB open: 2 | MT positions: 2
+[2026-03-03 13:59:03] [WARN] Unknown: "cat" — type help
+[2026-03-03 14:47:09] [WARN] [RECONCILE] fetch failed: Positions fetch error 429: It seems like you are trying to access too many unexisting or undeployed trading accounts. Please check your application logs for occurrences of NotFoundError and make sure that you attempt to access trading accounts which are actually deployed in this region. — skipping to avoid false closes
+[2026-03-03 15:09:00] [INFO] Payload: {"action":"buy","symbol":"GOLD","lot":0.01,"price":5175.83,"time":"2026-03-03T12:06:00Z","secret":"your_webhook_secret"}
+[2026-03-03 15:09:00] [INFO] Signal: BUY GOLD lot:0.01 sl:— tp:—
+[2026-03-03 15:09:00] [TRD] FLIP GOLD: closing SELL → opening BUY
+[2026-03-03 15:09:00] [TRD] posId:688144715 reason:flipped to BUY
+[2026-03-03 15:09:00] [OK] Closed. Price:? PnL:?
+[2026-03-03 15:09:00] [PNL] PnL: N/A
+[2026-03-03 15:09:00] [OK] Flip: SELL closed ✔  Opening BUY...
+[2026-03-03 15:09:00] [INFO] Symbol info: pip=0.01 decimals=2 priceRange:[100,5000]
+[2026-03-03 15:09:00] [INFO] SL: 140 pips from entry (will calc after fill)
+[2026-03-03 15:09:00] [INFO] TP: 200 pips from entry (will calc after fill)
+[2026-03-03 15:09:00] [INFO] Trailing SL: 150 pips — will set after fill
+[2026-03-03 15:09:00] [INFO] → Entering trade with NO SL/TP to avoid INVALID_STOPS
+[2026-03-03 15:09:00] [INFO] MT response: {"stringCode":"TRADE_RETCODE_DONE","numericCode":10009,"message":"Request completed","orderId":"688375396","positionId":"688375396","tradeExecutionTime":"2026-03-03T14:09:01.162Z","tradeStartTime":"2026-03-03T12:09:00.654Z"}
+[2026-03-03 15:09:00] [INFO] Raw MT response: {"stringCode":"TRADE_RETCODE_DONE","numericCode":10009,"message":"Request completed","orderId":"688375396","positionId":"688375396","tradeExecutionTime":"2026-03-03T14:09:01.162Z","tradeStartTime":"2026-03-03T12:09:00.654Z"}
+[2026-03-03 15:09:00] [OK] MT confirmed positionId:688375396
+[2026-03-03 15:09:00] [INFO] Pip calc for GOLD: pip=0.01 entry=5177.1 SL=140pips→5175.7 TP=200pips→5179.1
+[2026-03-03 15:09:00] [WARN] Post-fill modify failed: ValidationError — Validation failed
+[2026-03-03 15:09:00] [WARN] Trade open, SL/TP NOT set. Use "update GOLD" to set manually.
+[2026-03-03 15:09:00] [BUY] BUY OPENED GOLD entry:5177.1 SL:— [default-pips] TP:— [default-pips] lot:0.01
+[2026-03-03 16:03:00] [INFO] Payload: {"action":"sell","symbol":"GOLD","lot":0.01,"price":5188.882,"time":"2026-03-03T13:00:00Z","secret":"your_webhook_secret"}
+[2026-03-03 16:03:00] [INFO] Signal: SELL GOLD lot:0.01 sl:— tp:—
+[2026-03-03 16:03:00] [TRD] FLIP GOLD: closing BUY → opening SELL
+[2026-03-03 16:03:00] [TRD] posId:688375396 reason:flipped to SELL
+[2026-03-03 16:03:00] [OK] Closed. Price:? PnL:?
+[2026-03-03 16:03:00] [PNL] PnL: N/A
+[2026-03-03 16:03:00] [OK] Flip: BUY closed ✔  Opening SELL...
+[2026-03-03 16:03:00] [INFO] Symbol info: pip=0.01 decimals=2 priceRange:[100,5000]
+[2026-03-03 16:03:00] [INFO] SL: 140 pips from entry (will calc after fill)
+[2026-03-03 16:03:00] [INFO] TP: 200 pips from entry (will calc after fill)
+[2026-03-03 16:03:00] [INFO] Trailing SL: 150 pips — will set after fill
+[2026-03-03 16:03:00] [INFO] → Entering trade with NO SL/TP to avoid INVALID_STOPS
+[2026-03-03 16:03:01] [INFO] MT response: {"stringCode":"TRADE_RETCODE_DONE","numericCode":10009,"message":"Request completed","orderId":"688467142","positionId":"688467142","tradeExecutionTime":"2026-03-03T15:03:01.474Z","tradeStartTime":"2026-03-03T13:03:00.960Z"}
+[2026-03-03 16:03:01] [INFO] Raw MT response: {"stringCode":"TRADE_RETCODE_DONE","numericCode":10009,"message":"Request completed","orderId":"688467142","positionId":"688467142","tradeExecutionTime":"2026-03-03T15:03:01.474Z","tradeStartTime":"2026-03-03T13:03:00.960Z"}
+[2026-03-03 16:03:01] [OK] MT confirmed positionId:688467142
+[2026-03-03 16:03:01] [INFO] Pip calc for GOLD: pip=0.01 entry=5189.39 SL=140pips→5190.79 TP=200pips→5187.39
+[2026-03-03 16:03:01] [WARN] Post-fill modify failed: ValidationError — Validation failed
+[2026-03-03 16:03:01] [WARN] Trade open, SL/TP NOT set. Use "update GOLD" to set manually.
+[2026-03-03 16:03:01] [SELL] SELL OPENED GOLD entry:5189.39 SL:— [default-pips] TP:— [default-pips] lot:0.01
+[2026-03-03 16:19:24] [WARN] [CLOSED EXTERNALLY] GOLD SELL posId:688467142 (1165s old) — marking closed in DB
+[2026-03-03 16:19:24] [PNL] External close PnL: 19.18 USD
+[2026-03-03 16:40:18] [INFO] MT live: 1 — GBPJPY/BUY id:688143383
+[2026-03-03 16:40:18] [INFO] DB open: 1 — GBPJPY/BUY posId:688143383
+[2026-03-03 16:40:18] [OK] Reconcile done. DB open: 1 | MT positions: 1
+[2026-03-03 16:41:06] [INFO] MT live: 1 — GBPJPY/BUY id:688143383
+[2026-03-03 16:41:06] [INFO] DB open: 1 — GBPJPY/BUY posId:688143383
+[2026-03-03 16:41:06] [OK] Reconcile done. DB open: 1 | MT positions: 1
+[2026-03-03 16:44:10] [INFO] Signal: BUY GOLD lot:0.02 sl:— tp:—
+[2026-03-03 16:44:10] [INFO] Other open: GBPJPY BUY — adding GOLD
+[2026-03-03 16:44:10] [INFO] Symbol info: pip=0.01 decimals=2 priceRange:[100,5000]
+[2026-03-03 16:44:10] [INFO] SL: 140 pips from entry (will calc after fill)
+[2026-03-03 16:44:10] [INFO] TP: 200 pips from entry (will calc after fill)
+[2026-03-03 16:44:10] [INFO] Trailing SL: 150 pips — will set after fill
+[2026-03-03 16:44:10] [INFO] → Entering trade with NO SL/TP to avoid INVALID_STOPS
+[2026-03-03 16:44:11] [INFO] MT response: {"stringCode":"TRADE_RETCODE_DONE","numericCode":10009,"message":"Request completed","orderId":"688565001","positionId":"688565001","tradeExecutionTime":"2026-03-03T15:44:11.486Z","tradeStartTime":"2026-03-03T13:44:10.983Z"}
+[2026-03-03 16:44:11] [INFO] Raw MT response: {"stringCode":"TRADE_RETCODE_DONE","numericCode":10009,"message":"Request completed","orderId":"688565001","positionId":"688565001","tradeExecutionTime":"2026-03-03T15:44:11.486Z","tradeStartTime":"2026-03-03T13:44:10.983Z"}
+[2026-03-03 16:44:11] [OK] MT confirmed positionId:688565001
+[2026-03-03 16:44:11] [INFO] Pip calc for GOLD: pip=0.01 entry=5149.35 SL=140pips→5147.95 TP=200pips→5151.35
+[2026-03-03 16:44:11] [WARN] Post-fill modify failed: ValidationError — Validation failed
+[2026-03-03 16:44:11] [WARN] Trade open, SL/TP NOT set. Use "update GOLD" to set manually.
+[2026-03-03 16:44:11] [BUY] BUY OPENED GOLD entry:5149.35 SL:— [default-pips] TP:— [default-pips] lot:0.02
+[2026-03-03 16:44:29] [TRD] posId:688565001 reason:CLI close
+[2026-03-03 16:44:29] [OK] Closed. Price:? PnL:?
+[2026-03-03 16:44:29] [PNL] PnL: N/A
+[2026-03-03 16:48:16] [INFO] MT live: 1 — GBPJPY/BUY id:688143383
+[2026-03-03 16:48:16] [INFO] DB open: 1 — GBPJPY/BUY posId:688143383
+[2026-03-03 16:48:16] [OK] Reconcile done. DB open: 1 | MT positions: 1
+[2026-03-03 17:06:00] [INFO] Payload: {"action":"buy","symbol":"GOLD","lot":0.01,"price":5162.85,"time":"2026-03-03T14:03:00Z","secret":"your_webhook_secret"}
+[2026-03-03 17:06:00] [INFO] Signal: BUY GOLD lot:0.01 sl:— tp:—
+[2026-03-03 17:06:00] [INFO] Other open: GBPJPY BUY — adding GOLD
+[2026-03-03 17:06:00] [INFO] Symbol info: pip=0.01 decimals=2 priceRange:[100,5000]
+[2026-03-03 17:06:00] [INFO] SL: 140 pips from entry (will calc after fill)
+[2026-03-03 17:06:00] [INFO] TP: 200 pips from entry (will calc after fill)
+[2026-03-03 17:06:00] [INFO] Trailing SL: 150 pips — will set after fill
+[2026-03-03 17:06:00] [INFO] → Entering trade with NO SL/TP to avoid INVALID_STOPS
+[2026-03-03 17:06:01] [INFO] MT response: {"stringCode":"TRADE_RETCODE_DONE","numericCode":10009,"message":"Request completed","orderId":"688620111","positionId":"688620111","tradeExecutionTime":"2026-03-03T16:06:01.638Z","tradeStartTime":"2026-03-03T14:06:01.120Z"}
+[2026-03-03 17:06:01] [INFO] Raw MT response: {"stringCode":"TRADE_RETCODE_DONE","numericCode":10009,"message":"Request completed","orderId":"688620111","positionId":"688620111","tradeExecutionTime":"2026-03-03T16:06:01.638Z","tradeStartTime":"2026-03-03T14:06:01.120Z"}
+[2026-03-03 17:06:01] [OK] MT confirmed positionId:688620111
+[2026-03-03 17:06:01] [INFO] Pip calc for GOLD: pip=0.01 entry=5163.8 SL=140pips→5162.4 TP=200pips→5165.8
+[2026-03-03 17:06:01] [WARN] Post-fill modify failed: ValidationError — Validation failed
+[2026-03-03 17:06:01] [WARN] Trade open, SL/TP NOT set. Use "update GOLD" to set manually.
+[2026-03-03 17:06:01] [BUY] BUY OPENED GOLD entry:5163.8 SL:— [default-pips] TP:— [default-pips] lot:0.01
